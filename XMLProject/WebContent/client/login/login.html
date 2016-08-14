@@ -1,0 +1,50 @@
+<div class="back">
+	  <form class="formUserLogin" ng-submit="login()">
+    	<div class="row">
+			<div class="col-md-offset-4 col-md-4">
+			<h1><b> Prijava korisnika  </b></h1><br>
+			</div>
+			<div class="col-md-4"> &nbsp; </div>
+		</div>
+		<div class="row">
+			<div class="col-md-offset-4 col-md-4">
+				<div class="alert alert-danger" role="alert" ng-show="error">
+            		<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            		{{errorMessage}}
+        		</div>
+			</div>
+			<div class="col-md-4"> &nbsp; </div>
+		</div>
+        Unesite korisnicko ime:
+		<div class="row">
+			<div class="col-md-offset-4 col-md-4">
+				<input type="text" ng-model="user.username" placeholder="Korisnicko ime" class="form-control" required><br>
+			</div>
+			<div class="col-md-4"> &nbsp; </div>
+		</div>
+		<div class="row">
+			<div class="col-md-offset-4 col-md-4">
+				<input type="password" ng-model="user.password" placeholder="Lozinka" class="form-control" required><br>
+			</div>
+			<div class="col-md-4"> &nbsp; </div>
+		</div>
+		<div class="row">
+			<div class="col-md-offset-4 col-md-4">
+				<label><input type="radio" ng-click="changeRole('ALDERMAN')" name="role" value="alderman"> &nbsp; Odbornik skupstine</label>
+			</div>
+			<div class="col-md-4"> &nbsp; </div>
+		</div>
+		<div class="row">
+			<div class="col-md-offset-4 col-md-4">
+				<label><input type="radio" ng-click="changeRole('PRESIDENT')" name="role" value="president"> &nbsp; Predsednik skupstine</label>
+			</div>
+			<div class="col-md-4"> &nbsp; </div>
+		</div>
+		<div class="row">
+			<div class="col-md-offset-4 col-md-4">
+				<input type="submit" value="Log in" class="btn btn-primary btn-block">
+			</div>
+			<div class="col-md-4"> &nbsp; </div>
+		</div>
+    </form>
+</div>
