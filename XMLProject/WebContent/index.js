@@ -1,6 +1,7 @@
 (function(angular) {
 
-	var xml = angular.module('xml', [ 'ngRoute', 'ui.router', 'ngStorage' ])
+	var xml = angular.module('xml', [ 'ngRoute', 'ui.router', 'ngStorage',
+			'login', 'ngResource', 'ui.bootstrap' ])
 
 	xml.config(config).run(run)
 	function config($stateProvider) {
@@ -24,6 +25,9 @@
 				$state.go('login');
 			}
 		});
+
+	
+		
 	}
 
 }(angular))

@@ -2,7 +2,9 @@
 	angular.module('login', [ 'loginResource' ]).controller(
 			'loginCtrl',
 			function($scope, Login) {
+			
 				$scope.user = {};
+				
 				$scope.login = function() {
 					console.log($scope.user)
 					Login.login($scope.user.username, $scope.user.password,
