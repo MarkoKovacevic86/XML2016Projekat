@@ -13,6 +13,16 @@
 			templateUrl : 'client/login/login.html',
 			controller : 'loginCtrl'
 		})
+		.state('amendments',{
+			url : '/amendments',
+			templateUrl : 'client/amendments/amendments.html',
+			controller : 'amendmentsCtrl'
+		})
+		.state('acts',{
+			url : '/acts',
+			templateUrl : 'client/acts/acts.html',
+			controller : 'actsCtrl'
+		})
 	}
 
 	function run($rootScope, $http, $location, $localStorage, $state) {

@@ -12,12 +12,20 @@
 						url : 'acts/deleteAct/:id',
 						id : '@id'
 					},
+					getById: {
+						method:'GET',
+						url : 'acts/:id',
+						id : '@id'
+						
+					},
 					addAct : {
 						method: 'POST',
 						url : 'acts/addAct/:act',
 						act : '@act'
 					}
 				})
+				
+				return Acts;
 			})
 
 }(angular))

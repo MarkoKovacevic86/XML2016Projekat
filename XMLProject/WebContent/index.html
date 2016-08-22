@@ -18,8 +18,8 @@
 <script src="client/amendments/amendmentsResource.js"></script>
 
 <script	src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
-	
-
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">	
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <style>
 
 #logo { float: left; }
@@ -27,7 +27,7 @@
 #nav {
 	background-color: #004080;
 	width:100%;
-     height:66px;
+    height:66px;
 	box-shadow: 0px 1px 10px #5E5E5E;
 	position: fixed;
 	top: 0px;
@@ -38,7 +38,7 @@
 	display: none;
 	color: #EDEDED;
 	font-family: verdana;
-	font-size: 25px;
+	font-size: 14px;
 	width: 350px;
 	margin-top: 6px;
 	margin-left: 150px;
@@ -59,6 +59,14 @@ body {
     opacity: 0.6;
 	-webkit-filter: grayscale(1); /* Old WebKit */
   	filter: grayscale(1);
+}
+
+.jumbotron {
+	background-color: #004080;
+	opacity: 0.9;
+	font-family: century gothic;
+	text-decoration: none;
+	color: white;
 }
 
 .center {
@@ -94,7 +102,7 @@ li {
 }
  */
 #nav a {
-	font-size: 1.6em;
+	font-size: 1.4em;
 	text-transform: uppercase;
 	text-shadow: 0 0 0.3em #464646;
 	font-weight: bold;
@@ -103,6 +111,10 @@ li {
 	color: white;
 	opacity: 0.8;
 	text-align: center;
+}
+
+li {
+	padding: 10px;
 }
 
 #nav a:hover {
@@ -117,16 +129,14 @@ li {
      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Emblem_of_the_National_Assembly_of_Serbia.svg/2000px-Emblem_of_the_National_Assembly_of_Serbia.svg.png" id="logo"/>
     
   <ul class='navigation'>
-    <li class='navigation-Blog'><a ui-sref="ss">Akti</a></li>
+    <li class='navigation-Login'><a ui-sref="acts">Akti</a></li>
+    <li class='navigation-Amendments'><a ui-sref="amendments">Amandmani</a></li>
     <li class='navigation-Crew'><a ui-sref>Akti u proceduri</a></li>
     <li class='navigation-Promos'><a ui-sref>Predlozi akta</a></li>
     <li class='navigation-Parties'><a ui-sref>Predlozi </a></li>
     <li class='navigation-Tricks'><a ui-sref>Sednica</a></li>
     <li class='navigation-Login'><a ui-sref="login">Prijava</a></li>
-    
     </ul>
- <!--  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Emblem_of_the_National_Assembly_of_Serbia.svg/2000px-Emblem_of_the_National_Assembly_of_Serbia.svg.png" id="logo"/>
- -->
 <div ui-view style="margin-top:10%;padding:1px 16px;height:1000px;">
 </div>
 </div>
