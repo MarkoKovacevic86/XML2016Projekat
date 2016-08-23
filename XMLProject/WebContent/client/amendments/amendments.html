@@ -1,0 +1,29 @@
+<div>
+
+	<div class="jumbotron" style="align:center;width:50;">
+		<h1>Amandmani</h1>
+		<button class="btn btn-success topright" ng-click="value= !value;">Predlozi
+			novi amandman</button>
+
+		<table class="table">
+			<th>Broj</th>
+			<th>Naziv</th>
+			<tr ng-repeat="a in amendments">
+				<td>{{a.broj}}</td>
+				<td>{{a.naziv}}</td>
+			</tr>
+		</table>
+
+
+		<div class="container" ng-show="value">
+			<div class="form-group">
+				<label for="amandman">Novi amandman:</label>
+				<textarea class="form-control" rows="15" id="amandman"
+					ng-model="amendment"></textarea>
+				<button ng-click="" class="btn btn-success"
+					style="margin-top: 10px;">Predlozi</button>
+
+			</div>
+		</div>
+	</div>
+</div>

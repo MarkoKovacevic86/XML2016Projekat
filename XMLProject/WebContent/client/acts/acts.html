@@ -1,37 +1,46 @@
 <div>
-<div align="center" "width: 45%;" class="jumbotron">
-	
-<div class="container">
-	<table>
-		<tr>
-			<td>Datum predlaganja:</td>
-			<td><input type="date" ng-model="search.date"
-				class="form-control" style="margin-left: 10px;" /></td>
-		</tr>
+	<div style="align:center;width:50;" class="jumbotron">
+		<button class="btn btn-success topright" ng-click="value= !value;">Dodaj
+			novi akt</button>
+		<div class="container">
+			<table>
+				<tr>
+					<td>Datum predlaganja:</td>
+					<td><input type="date" ng-model="search.date"
+						class="form-control" style="margin-left: 10px;" /></td>
+				</tr>
 
-		<tr>
-			<td>Naslov:</td>
-			<td><input type="text" ng-model="search.naslov"
-				class="form-control" style="margin-top: 10px; margin-left: 10px;" /></td>
-		</tr>
+				<tr>
+					<td>Naslov:</td>
+					<td><input type="text" ng-model="search.naslov"
+						class="form-control" style="margin-top: 10px; margin-left: 10px;" /></td>
+				</tr>
 
-		<tr>
-			<td colspan="2" style="text-align: center;"><button
-					ng-click="search()" class="btn btn-success"
-					style="margin-top: 10px;">Pretraga</button></td>
-		</tr>
-	</table>
-	<br/><br/>
-	<table class="table">
-		<tr>
-			<th>Naziv</th>
-			<th>Datum</th>
-			<th>Vrsta</th>
-		</tr>
-		<tr ng-repeat="act in acts">
-			<td></td>
-		</tr>
-	</table>
-</div>
-</div>
+				<tr>
+					<td colspan="2" style="text-align: center;"><button
+							ng-click="search()" class="btn btn-success"
+							style="margin-top: 10px;">Pretraga</button></td>
+				</tr>
+			</table>
+			
+			<br />
+			<br />
+			<table class="table">
+				<tr>
+					<th>Naziv</th>
+					<th>Datum</th>
+					<th>Vrsta</th>
+				</tr>
+				<tr ng-repeat="act in acts">
+				</tr>
+			</table>
+		</div>
+			<div class="container" ng-show="value">
+				<div class="form-group">
+					<label for="act">Novi amandman:</label>
+					<textarea class="form-control" rows="15" id="act" ></textarea>
+					<button ng-click="create()" class="btn btn-success">Predloži</button>
+				</div>
+	</div>
+
 </div>

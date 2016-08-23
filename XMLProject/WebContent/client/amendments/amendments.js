@@ -1,6 +1,6 @@
 (function(angular) {
 
-	angular.module('amendmentsCtrl', [ 'amendmentsResource' ]).controller('amendmentsController',
+	angular.module('amendments', [ 'amendmentsResource' ]).controller('amendmentsCtrl',
 			function($scope,Amendments) {
 			
 			$scope.amendments = {};
