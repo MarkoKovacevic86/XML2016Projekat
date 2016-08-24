@@ -1,6 +1,6 @@
 (function(angular) {
 	angular.module('loginResource', [ 'ngResource' ]).factory('Login',
-			function($resource, $localStorage, $log, $location) {
+			function($http, $resource, $localStorage, $log, $location) {
 				var Login = {};
 				Login.login = login;
 				Login.logout = logout;
@@ -13,7 +13,7 @@
 					user.password = password;
 					$http({
 						method : "POST",
-						url : '/login',
+						url : '/XMLProject/rest/user/login',
 						data : user,
 						headers : {
 							'Content-Type' : 'application/json'
@@ -27,6 +27,7 @@
 							$localStorage.currentUser = currentUser;
 							$location.path('/login');
 						} else {
+							console.log("Usao u not success")
 							callback(false);
 						}
 					})
