@@ -129,7 +129,7 @@ li {
 #nav a {
 	position: relative;
 	top: 0px;
-	font-size: 1.4em;
+	font-size: 1.6em;
 	text-transform: uppercase;
 	text-shadow: 0 0 0.3em #464646;
 	font-weight: bold;
@@ -155,12 +155,12 @@ li {
 			id="logo" /> <br>
 		<div>
 			<ul class='navigation'>
-				<li class='navigation-Acts'><a ui-sref="acts">Akti</a></li>
-				<li class='navigation-Amendments'><a ui-sref="amendments">Amandmani</a></li>
+				<li class='navigation-Acts' "><a ui-sref="acts">Akti</a></li>
 				<li class='navigation-Crew'><a ui-sref>Akti u proceduri</a></li>
-				<li class='navigation-Promos'><a ui-sref>Predlozi akta</a></li>
-				<li class='navigation-Parties'><a ui-sref>Predlozi </a></li>
-				<li class='navigation-Tricks'><a ui-sref>Sednica</a></li>
+				<li class='navigation-Amendments' ng-show="getCurrentUserRole()!='citizen'"><a ui-sref="amendments">Amandmani</a></li>
+				<li class='navigation-Promos' ng-show="getCurrentUserRole()!='citizen'"><a ui-sref>Predlozi akta</a></li>
+				<li class='navigation-Parties' ng-show="getCurrentUserRole()!='citizen'"><a ui-sref>Predlozi </a></li>
+				<li class='navigation-Tricks' ng-show="getCurrentUserRole()=='president'"><a ui-sref>Sednica</a></li>
 				<li class='navigation-Login' ng-show="!isLoggedIn()"><a ui-sref="login">Prijava</a></li>	
 			</ul>
 		</div>
