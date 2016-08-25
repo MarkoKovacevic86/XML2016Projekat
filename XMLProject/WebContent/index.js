@@ -38,6 +38,8 @@
 			console.log("Logged Out")
 			Login.logout();
 		}
+		
+		
 
 		$rootScope.getCurrentUser = function() {
 			if (!Login.getCurrentUser()) {

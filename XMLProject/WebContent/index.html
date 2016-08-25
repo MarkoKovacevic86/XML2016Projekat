@@ -94,11 +94,11 @@ body {
 	padding: 10px;
 }
 
-ul {
+/* ul {
 	position: relative;
 	top: 0px;
 	text-align: center;
-}
+} */
 
 .navigation {
 	position: relative;
@@ -155,13 +155,13 @@ li {
 			id="logo" /> <br>
 		<div>
 			<ul class='navigation'>
-				<li class='navigation-Login'><a ui-sref="acts">Akti</a></li>
+				<li class='navigation-Acts'><a ui-sref="acts">Akti</a></li>
 				<li class='navigation-Amendments'><a ui-sref="amendments">Amandmani</a></li>
 				<li class='navigation-Crew'><a ui-sref>Akti u proceduri</a></li>
 				<li class='navigation-Promos'><a ui-sref>Predlozi akta</a></li>
 				<li class='navigation-Parties'><a ui-sref>Predlozi </a></li>
 				<li class='navigation-Tricks'><a ui-sref>Sednica</a></li>
-				<li class='navigation-Login'><a ui-sref="login">Prijava</a></li>
+				<li class='navigation-Login' ng-show="!isLoggedIn()"><a ui-sref="login">Prijava</a></li>	
 			</ul>
 		</div>
 	</div>

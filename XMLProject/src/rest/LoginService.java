@@ -14,14 +14,14 @@ import uloge.User;
 @Path("/user")
 public class LoginService {
 
-	private String path = "/users/users.txt";
+	private String path = "C:\\Users\\Bebica\\git\\XML2016\\XMLProject\\src\\users\\users.txt";
 
 	@Path("/login")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public User login(User u) {
-		System.err.println("Usao u LoginService");
-		File f = new File(getClass().getResource(path).getPath());
+		System.out.println("Usao u LoginService");
+		File f = new File(path);
 		try {
 			Scanner scanner = new Scanner(f);
 			while (scanner.hasNext()) {
