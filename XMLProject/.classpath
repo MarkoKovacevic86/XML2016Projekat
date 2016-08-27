@@ -62,5 +62,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/slf4j-api-1.7.4.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/validation-api-1.1.0.Final.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xmlgraphics-commons-2.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/genson-1.4.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

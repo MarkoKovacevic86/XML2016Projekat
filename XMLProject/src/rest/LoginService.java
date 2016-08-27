@@ -22,6 +22,7 @@ public class LoginService {
 
 	@Path("/login")
 	@POST
+	@Produces(MediaType.APPLICATION_JSON)
 	public User login(String json) {
 		System.out.println(json);
 		ObjectMapper mapper = new ObjectMapper();

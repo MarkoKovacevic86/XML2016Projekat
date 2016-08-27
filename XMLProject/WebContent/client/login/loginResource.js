@@ -11,7 +11,6 @@
 					var user = {};
 					user.username = username;
 					user.password = password;
-					user.role = "role";
 					$http({
 						method : "POST",
 						url : 'http://localhost:8081/XMLProject/rest/user/login',
