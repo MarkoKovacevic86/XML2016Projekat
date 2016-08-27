@@ -4,8 +4,7 @@
 				var Acts = $resource('/acts', {}, {
 					getActs : {
 						method : 'GET',
-						url : 'acts/getActs',
-						isArray:true
+						url : 'http://localhost:8081/XMLProject/rest/acts/getActs'
 					},
 					deleteAct :{
 						method :'DELETE',
@@ -24,7 +23,6 @@
 						act : '@act'
 					}
 				})
-				
 				return Acts;
 			})
 
