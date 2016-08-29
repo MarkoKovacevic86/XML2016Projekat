@@ -1,7 +1,8 @@
 (function(angular) {
 
 	var xml = angular.module('xml', [ 'ngRoute', 'ui.router', 'ngStorage',
-			'login','acts','amendments' ,'ngResource', 'ui.bootstrap' ])
+			'login', 'acts', 'amendments', 'session', 'ngResource',
+			'ui.bootstrap' ])
 
 	xml.config(config).run(run)
 	function config($stateProvider) {
@@ -20,6 +21,10 @@
 			url : '/acts',
 			templateUrl : 'client/acts/acts.html',
 			controller : 'actsCtrl'
+		}).state('session', {
+			url : '/session',
+			templateUrl : 'client/session/session.html',
+			controller : 'sessionCtrl'
 		})
 	}
 
@@ -27,9 +32,10 @@
 		$rootScope.$on('$stateChangeSuccess', function(event, toState,
 				toParams, fromState, fromParams) {
 			// lista javnih stanja
-			var publicStates = [ 'login', 'acts','amendments',/* 'entry', */'' ];
+			var publicStates = [ 'login', 'acts', 'amendments',/* 'entry', */
+			'' ];
 			var restrictedState = publicStates.indexOf(toState.name) === -1;
-			if (restrictedState && !AuthenticationService.getCurrentUser()) {
+			if (restrictedState && !Login.getCurrentUser()) {
 				$state.go('login');
 			}
 		});
@@ -38,8 +44,6 @@
 			console.log("Logged Out")
 			Login.logout();
 		}
-		
-		
 
 		$rootScope.getCurrentUser = function() {
 			if (!Login.getCurrentUser()) {

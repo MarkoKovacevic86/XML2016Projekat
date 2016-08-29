@@ -1,0 +1,23 @@
+<div>
+	<div style="align: center; width: 50;" class="jumbotron">
+		<h2 align="center">Sednica</h2>
+		<br> <br>
+		<div class="container">
+			<table>
+				<tr ng-repeat="act in acts">
+					<td><a class="amandmani" ng-click="show = !show">{{act.naziv.value}}
+							{{act.datum.value}}</a>
+						<ul ng-repeat="act in acts" ng-show="show">
+							<li>{{act.naziv.value}}</li>
+						</ul></td>
+					<td>
+						<div>
+							<button class="btn btn-info" ng-click="show = !show">Usvoji
+								u celosti</button>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
