@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:p="http://www.parlament.gov.rs/propisi/"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+    targetNamespace="http://www.parlament.gov.rs/propisi/" elementFormDefault="qualified"
+    vc:minVersion="1.0" vc:maxVersion="1.1">
+    <xs:element name="Akt">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Sporedni_deo">
+                    <xs:complexType>
+                        <xs:choice>
+                            <xs:element name="Akt_u_proceduri">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Predlagac" type="xs:string"/>
+                                        <xs:element name="Upucuje_se" type="xs:string"/>
+                                        <xs:element name="Meta_podaci">
+                                            <xs:complexType>
+                                                <xs:all>
+                                                  <xs:element name="Oznaka" type="xs:string"/>
+                                                  <xs:element name="Naziv" type="xs:string"/>
+                                                  <xs:element name="Vrsta" type="xs:string"/>
+                                                  <xs:element name="Datum" type="xs:date"/>
+                                                  <xs:element name="Mesto" type="xs:string"/>
+                                                  <xs:element name="Broj_glasova_za" type="xs:int"/>
+                                                  <xs:element name="Broj_glasova" type="xs:int"/>
+                                                </xs:all>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Donet_akt">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Donet_od_strane" type="xs:string"/>
+                                        <xs:element name="Po_postupku" type="xs:string"/>
+                                        <xs:element name="Po_cilju" type="xs:string"/>
+                                        <xs:element name="Meta_podaci">
+                                            <xs:complexType>
+                                                <xs:all>
+                                                  <xs:element name="Oznaka" type="xs:string"/>
+                                                  <xs:element name="Naziv" type="xs:string"/>
+                                                  <xs:element name="Vrsta" type="xs:string"/>
+                                                  <xs:element name="Datum" type="xs:date"/>
+                                                </xs:all>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="status" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Glavni_deo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="Deo">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="1" minOccurs="1" name="Sadrzaj">
+                                <xs:complexType>
+                                    <xs:sequence maxOccurs="unbounded" minOccurs="0">
+                                        <xs:element maxOccurs="unbounded" minOccurs="0" name="Glava">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="Sadrzaj">
+                                                  <xs:complexType>
+                                                  <xs:sequence maxOccurs="unbounded" minOccurs="0">
+                                                  <xs:element maxOccurs="unbounded" minOccurs="0"
+                                                  name="Clan"/>
+                                                  <xs:element maxOccurs="unbounded" minOccurs="0"
+                                                  name="Odeljak">
+                                                  <xs:complexType>
+                                                  <xs:sequence>
+                                                  <xs:element name="Sadrzaj">
+                                                  <xs:complexType>
+                                                  <xs:sequence maxOccurs="unbounded" minOccurs="0"/>
+                                                  </xs:complexType>
+                                                  </xs:element>
+                                                  </xs:sequence>
+                                                  </xs:complexType>
+                                                  </xs:element>
+                                                  </xs:sequence>
+                                                  </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="unbounded" minOccurs="0"
+                                            name="Odeljak">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="Sadrzaj">
+                                                  <xs:complexType>
+                                                  <xs:sequence maxOccurs="unbounded" minOccurs="0">
+                                                  <xs:element maxOccurs="unbounded" minOccurs="0"
+                                                  name="Clan">
+                                                  <xs:complexType>
+                                                  <xs:sequence>
+                                                  <xs:element name="Sadrzaj">
+                                                  <xs:complexType>
+                                                  <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" minOccurs="0"
+                                                  name="Stav"/>
+                                                  <xs:element maxOccurs="unbounded" minOccurs="0"
+                                                  name="Tacka"/>
+                                                  </xs:sequence>
+                                                  <xs:attribute name="newAttribute"/>
+                                                  </xs:complexType>
+                                                  </xs:element>
+                                                  </xs:sequence>
+                                                  </xs:complexType>
+                                                  </xs:element>
+                                                  </xs:sequence>
+                                                  </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="unbounded" minOccurs="0" name="Clan">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="Sadrzaj">
+                                                  <xs:complexType>
+                                                  <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" minOccurs="0"
+                                                  name="Stav"/>
+                                                  <xs:element maxOccurs="unbounded" minOccurs="0"
+                                                  name="Tacka"/>
+                                                  </xs:sequence>
+                                                  <xs:attribute name="newAttribute"/>
+                                                  </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Status">
+                                <xs:complexType>
+                                    <xs:all/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="Glava">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Sadrzaj"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="newElement"/>
+</xs:schema>
