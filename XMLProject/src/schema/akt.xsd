@@ -145,10 +145,10 @@
                     <xs:anyAttribute namespace="##any"/>
                 </xs:complexType>
             </xs:element>
-            <xs:element ref="p:ref"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" ref="p:ref"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="SadrzajStav">
+    <xs:complexType mixed="true" name="SadrzajStav">
         <xs:sequence maxOccurs="unbounded" minOccurs="0">
             <xs:element maxOccurs="unbounded" minOccurs="0" name="Tacka">
                 <xs:complexType>
@@ -263,10 +263,10 @@
                     <xs:anyAttribute namespace="##any"/>
                 </xs:complexType>
             </xs:element>
-            <xs:element ref="p:ref"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" ref="p:ref"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="SadrzajClan">
+    <xs:complexType mixed="true" name="SadrzajClan">
         <xs:sequence maxOccurs="unbounded" minOccurs="0">
             <xs:element maxOccurs="unbounded" minOccurs="0" name="Tacka">
                 <xs:complexType>
@@ -541,7 +541,7 @@
             <xs:element maxOccurs="unbounded" minOccurs="0" ref="p:ref"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="SadrzajOdeljka">
+    <xs:complexType mixed="true" name="SadrzajOdeljka">
         <xs:sequence maxOccurs="unbounded" minOccurs="0">
             <xs:element maxOccurs="unbounded" minOccurs="0" name="Clan">
                 <xs:complexType>
@@ -862,7 +862,7 @@
             <xs:element maxOccurs="unbounded" minOccurs="0" ref="p:ref"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="SadrzajPodtacke">
+    <xs:complexType mixed="true" name="SadrzajPodtacke">
         <xs:sequence maxOccurs="unbounded" minOccurs="0">
             <xs:element maxOccurs="unbounded" minOccurs="0" name="Alineja">
                 <xs:complexType>
@@ -894,7 +894,7 @@
             <xs:element maxOccurs="unbounded" minOccurs="0" ref="p:ref"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="SadrzajGlave">
+    <xs:complexType mixed="true" name="SadrzajGlave">
         <xs:sequence maxOccurs="unbounded" minOccurs="0">
             <xs:element maxOccurs="unbounded" minOccurs="0" name="Clan">
                 <xs:complexType>
@@ -1576,7 +1576,7 @@
             <xs:element maxOccurs="unbounded" minOccurs="0" ref="p:ref"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="SadrzajDeo">
+    <xs:complexType mixed="true" name="SadrzajDeo">
         <xs:sequence maxOccurs="unbounded" minOccurs="0">
             <xs:element maxOccurs="unbounded" minOccurs="0" name="Clan">
                 <xs:complexType>
