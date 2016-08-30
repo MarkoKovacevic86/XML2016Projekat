@@ -20,22 +20,7 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="Sadrzaj" type="p:SadrzajDeo"/>
-                            <xs:element name="Status">
-                                <xs:complexType>
-                                    <xs:all>
-                                        <xs:element name="status_izmene" type="xs:string"/>
-                                        <xs:element name="ref">
-                                            <xs:complexType>
-                                                <xs:simpleContent>
-                                                  <xs:extension base="xs:string">
-                                                  <xs:attribute name="id_ref" type="xs:string"/>
-                                                  </xs:extension>
-                                                </xs:simpleContent>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:all>
-                                </xs:complexType>
-                            </xs:element>
+                            <xs:element ref="p:status"/>
                         </xs:sequence>
                         <xs:attribute name="oznaka" type="xs:string"/>
                         <xs:attribute name="naziv" type="xs:string"/>
@@ -47,22 +32,7 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="Sadrzaj" type="p:SadrzajGlave"/>
-                            <xs:element name="Status">
-                                <xs:complexType>
-                                    <xs:all>
-                                        <xs:element name="status_izmene" type="xs:string"/>
-                                        <xs:element name="ref">
-                                            <xs:complexType>
-                                                <xs:simpleContent>
-                                                  <xs:extension base="xs:string">
-                                                  <xs:attribute name="id_ref" type="xs:string"/>
-                                                  </xs:extension>
-                                                </xs:simpleContent>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:all>
-                                </xs:complexType>
-                            </xs:element>
+                            <xs:element ref="p:status"/>
                         </xs:sequence>
                         <xs:attribute name="oznaka" type="xs:string"/>
                         <xs:attribute name="naziv" type="xs:string"/>
@@ -74,22 +44,7 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="Sadrzaj" type="xs:string"/>
-                            <xs:element name="Status">
-                                <xs:complexType>
-                                    <xs:all>
-                                        <xs:element name="status_izmene" type="xs:string"/>
-                                        <xs:element name="ref">
-                                            <xs:complexType>
-                                                <xs:simpleContent>
-                                                  <xs:extension base="xs:string">
-                                                  <xs:attribute name="id_ref" type="xs:string"/>
-                                                  </xs:extension>
-                                                </xs:simpleContent>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:all>
-                                </xs:complexType>
-                            </xs:element>
+                            <xs:element ref="p:status"/>
                         </xs:sequence>
                         <xs:attribute name="oznaka" type="xs:string"/>
                         <xs:attribute name="naziv" type="xs:string"/>
@@ -101,22 +56,7 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="Sadrzaj" type="p:SadrzajPodtacke"/>
-                            <xs:element name="Status">
-                                <xs:complexType>
-                                    <xs:all>
-                                        <xs:element name="status_izmene" type="xs:string"/>
-                                        <xs:element name="ref">
-                                            <xs:complexType>
-                                                <xs:simpleContent>
-                                                  <xs:extension base="xs:string">
-                                                  <xs:attribute name="id_ref" type="xs:string"/>
-                                                  </xs:extension>
-                                                </xs:simpleContent>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:all>
-                                </xs:complexType>
-                            </xs:element>
+                            <xs:element ref="p:status"/>
                         </xs:sequence>
                         <xs:attribute name="oznaka" type="xs:string"/>
                         <xs:attribute name="naziv" type="xs:string"/>
@@ -128,22 +68,7 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="Sadrzaj" type="p:SadrzajTacke"/>
-                            <xs:element name="Status">
-                                <xs:complexType>
-                                    <xs:all>
-                                        <xs:element name="status_izmene" type="xs:string"/>
-                                        <xs:element name="ref">
-                                            <xs:complexType>
-                                                <xs:simpleContent>
-                                                  <xs:extension base="xs:string">
-                                                  <xs:attribute name="id_ref" type="xs:string"/>
-                                                  </xs:extension>
-                                                </xs:simpleContent>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:all>
-                                </xs:complexType>
-                            </xs:element>
+                            <xs:element ref="p:status"/>
                         </xs:sequence>
                         <xs:attribute name="oznaka" type="xs:string"/>
                         <xs:attribute name="naziv" type="xs:string"/>
@@ -155,22 +80,7 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="Sadrzaj" type="p:SadrzajStav"/>
-                            <xs:element name="Status">
-                                <xs:complexType>
-                                    <xs:all>
-                                        <xs:element name="status_izmene" type="xs:string"/>
-                                        <xs:element name="ref">
-                                            <xs:complexType>
-                                                <xs:simpleContent>
-                                                  <xs:extension base="xs:string">
-                                                  <xs:attribute name="id_ref" type="xs:string"/>
-                                                  </xs:extension>
-                                                </xs:simpleContent>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:all>
-                                </xs:complexType>
-                            </xs:element>
+                            <xs:element ref="p:status"/>
                         </xs:sequence>
                         <xs:attribute name="oznaka" type="xs:string"/>
                         <xs:attribute name="naziv" type="xs:string"/>
@@ -182,22 +92,7 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="Sadrzaj" type="p:SadrzajClan"/>
-                            <xs:element name="Status">
-                                <xs:complexType>
-                                    <xs:all>
-                                        <xs:element name="status_izmene" type="xs:string"/>
-                                        <xs:element name="ref">
-                                            <xs:complexType>
-                                                <xs:simpleContent>
-                                                  <xs:extension base="xs:string">
-                                                  <xs:attribute name="id_ref" type="xs:string"/>
-                                                  </xs:extension>
-                                                </xs:simpleContent>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:all>
-                                </xs:complexType>
-                            </xs:element>
+                            <xs:element ref="p:status"/>
                         </xs:sequence>
                         <xs:attribute name="oznaka" type="xs:string"/>
                         <xs:attribute name="naziv" type="xs:string"/>
@@ -209,22 +104,7 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="Sadrzaj" type="p:SadrzajOdeljka"/>
-                            <xs:element name="Status">
-                                <xs:complexType>
-                                    <xs:all>
-                                        <xs:element name="status_izmene" type="xs:string"/>
-                                        <xs:element name="ref">
-                                            <xs:complexType>
-                                                <xs:simpleContent>
-                                                  <xs:extension base="xs:string">
-                                                  <xs:attribute name="id_ref" type="xs:string"/>
-                                                  </xs:extension>
-                                                </xs:simpleContent>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:all>
-                                </xs:complexType>
-                            </xs:element>
+                            <xs:element ref="p:status"/>
                         </xs:sequence>
                         <xs:attribute name="oznaka" type="xs:string"/>
                         <xs:attribute name="naziv" type="xs:string"/>
@@ -246,13 +126,13 @@
                             <xs:element name="Meta_podaci">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="Oznaka" type="xs:string"/>
-                                        <xs:element name="Naziv" type="xs:string"/>
-                                        <xs:element name="Vrsta" type="xs:string"/>
-                                        <xs:element name="Datum" type="xs:date"/>
-                                        <xs:element name="Mesto" type="xs:string"/>
-                                        <xs:element name="Broj_glasova_za" type="xs:int"/>
-                                        <xs:element name="Broj_glasova" type="xs:int"/>
+                                        <xs:element ref="p:Oznaka"/>
+                                        <xs:element ref="p:Mesto"/>
+                                        <xs:element ref="p:Datum"/>
+                                        <xs:element ref="p:Vrsta"/>
+                                        <xs:element ref="p:Naziv"/>
+                                        <xs:element ref="p:BrUkupnihGlasova"/>
+                                        <xs:element ref="p:BrPozitivnihGlasova"/>
                                     </xs:all>
                                 </xs:complexType>
                             </xs:element>
@@ -268,10 +148,10 @@
                             <xs:element name="Meta_podaci">
                                 <xs:complexType>
                                     <xs:all>
-                                        <xs:element name="Oznaka" type="xs:string"/>
-                                        <xs:element name="Naziv" type="xs:string"/>
-                                        <xs:element name="Vrsta" type="xs:string"/>
-                                        <xs:element name="Datum" type="xs:date"/>
+                                        <xs:element ref="p:Oznaka"/>
+                                        <xs:element ref="p:Datum"/>
+                                        <xs:element ref="p:Vrsta"/>
+                                        <xs:element ref="p:Naziv"/>
                                     </xs:all>
                                 </xs:complexType>
                             </xs:element>
@@ -353,16 +233,7 @@
                     <xs:anyAttribute namespace="##any"/>
                 </xs:complexType>
             </xs:element>
-            <xs:element maxOccurs="unbounded" minOccurs="0" name="ref">
-                <xs:complexType>
-                    <xs:simpleContent>
-                        <xs:extension base="xs:string">
-                            <xs:attribute name="id_ref" type="xs:string"/>
-                            <xs:anyAttribute/>
-                        </xs:extension>
-                    </xs:simpleContent>
-                </xs:complexType>
-            </xs:element>
+            <xs:element ref="p:ref"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="SadrzajStav">
@@ -480,16 +351,7 @@
                     <xs:anyAttribute namespace="##any"/>
                 </xs:complexType>
             </xs:element>
-            <xs:element maxOccurs="unbounded" minOccurs="0" name="ref">
-                <xs:complexType>
-                    <xs:simpleContent>
-                        <xs:extension base="xs:string">
-                            <xs:attribute name="id_ref" type="xs:string"/>
-                            <xs:anyAttribute/>
-                        </xs:extension>
-                    </xs:simpleContent>
-                </xs:complexType>
-            </xs:element>
+            <xs:element ref="p:ref"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="SadrzajClan">
@@ -605,16 +467,6 @@
                     <xs:attribute name="naziv" type="xs:string"/>
                     <xs:attribute name="opis" type="xs:string"/>
                     <xs:anyAttribute namespace="##any"/>
-                </xs:complexType>
-            </xs:element>
-            <xs:element maxOccurs="unbounded" minOccurs="0" name="ref">
-                <xs:complexType>
-                    <xs:simpleContent>
-                        <xs:extension base="xs:string">
-                            <xs:attribute name="id_ref" type="xs:string"/>
-                            <xs:anyAttribute/>
-                        </xs:extension>
-                    </xs:simpleContent>
                 </xs:complexType>
             </xs:element>
             <xs:element maxOccurs="unbounded" minOccurs="0" name="Stav">
@@ -774,20 +626,11 @@
                     <xs:anyAttribute namespace="##any"/>
                 </xs:complexType>
             </xs:element>
+            <xs:element maxOccurs="unbounded" minOccurs="0" ref="p:ref"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="SadrzajOdeljka">
         <xs:sequence maxOccurs="unbounded" minOccurs="0">
-            <xs:element maxOccurs="unbounded" minOccurs="0" name="ref">
-                <xs:complexType>
-                    <xs:simpleContent>
-                        <xs:extension base="xs:string">
-                            <xs:attribute name="id_ref" type="xs:string"/>
-                            <xs:anyAttribute/>
-                        </xs:extension>
-                    </xs:simpleContent>
-                </xs:complexType>
-            </xs:element>
             <xs:element maxOccurs="unbounded" minOccurs="0" name="Clan">
                 <xs:complexType>
                     <xs:sequence>
@@ -1104,6 +947,7 @@
                     <xs:anyAttribute namespace="##any"/>
                 </xs:complexType>
             </xs:element>
+            <xs:element maxOccurs="unbounded" minOccurs="0" ref="p:ref"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="SadrzajPodtacke">
@@ -1135,30 +979,11 @@
                     <xs:anyAttribute namespace="##any"/>
                 </xs:complexType>
             </xs:element>
-            <xs:element maxOccurs="unbounded" minOccurs="0" name="ref">
-                <xs:complexType>
-                    <xs:simpleContent>
-                        <xs:extension base="xs:string">
-                            <xs:attribute name="id_ref" type="xs:string"/>
-                            <xs:anyAttribute/>
-                        </xs:extension>
-                    </xs:simpleContent>
-                </xs:complexType>
-            </xs:element>
+            <xs:element maxOccurs="unbounded" minOccurs="0" ref="p:ref"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="SadrzajGlave">
         <xs:sequence maxOccurs="unbounded" minOccurs="0">
-            <xs:element maxOccurs="unbounded" minOccurs="0" name="ref">
-                <xs:complexType>
-                    <xs:simpleContent>
-                        <xs:extension base="xs:string">
-                            <xs:attribute name="id_ref" type="xs:string"/>
-                            <xs:anyAttribute/>
-                        </xs:extension>
-                    </xs:simpleContent>
-                </xs:complexType>
-            </xs:element>
             <xs:element maxOccurs="unbounded" minOccurs="0" name="Clan">
                 <xs:complexType>
                     <xs:sequence>
@@ -1836,20 +1661,11 @@
                     <xs:anyAttribute namespace="##any"/>
                 </xs:complexType>
             </xs:element>
+            <xs:element maxOccurs="unbounded" minOccurs="0" ref="p:ref"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="SadrzajDeo">
         <xs:sequence maxOccurs="unbounded" minOccurs="0">
-            <xs:element maxOccurs="unbounded" minOccurs="0" name="ref">
-                <xs:complexType>
-                    <xs:simpleContent>
-                        <xs:extension base="xs:string">
-                            <xs:attribute name="id_ref" type="xs:string"/>
-                            <xs:anyAttribute/>
-                        </xs:extension>
-                    </xs:simpleContent>
-                </xs:complexType>
-            </xs:element>
             <xs:element maxOccurs="unbounded" minOccurs="0" name="Clan">
                 <xs:complexType>
                     <xs:sequence>
@@ -3251,6 +3067,107 @@
                     <xs:anyAttribute namespace="##any"/>
                 </xs:complexType>
             </xs:element>
+            <xs:element maxOccurs="unbounded" minOccurs="0" ref="p:ref"/>
         </xs:sequence>
     </xs:complexType>
+    <xs:element name="Naziv">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:anyAttribute namespace="##any" processContents="lax"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="TStatusAmandmana">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="odbijen"/>
+            <xs:enumeration value="prihvacen"/>
+            <xs:enumeration value="u_proceduri"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element default="0" name="BrPozitivnihGlasova">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:int">
+                    <xs:anyAttribute namespace="##any" processContents="lax"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element default="0" name="BrUkupnihGlasova">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:int">
+                    <xs:anyAttribute namespace="##any" processContents="lax"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Oznaka">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:anyAttribute namespace="##any" processContents="lax"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Mesto">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:anyAttribute namespace="##any" processContents="lax"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Datum">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:date">
+                    <xs:anyAttribute namespace="##any" processContents="lax"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Vrsta">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:anyAttribute namespace="##any" processContents="lax"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ref">
+        <xs:complexType mixed="false">
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="id_ref">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:pattern value="(\/[A-Za-z]*[0-9]*)+"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                    <xs:anyAttribute namespace="##any" processContents="lax"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="TStatusAkta">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="donet"/>
+            <xs:enumeration value="u_proceduri"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="status_izmene" type="p:TStatusAkta"/>
+    <xs:complexType name="AmandmanStatus">
+        <xs:all>
+            <xs:element ref="p:ref"/>
+            <xs:element ref="p:status_izmene"/>
+        </xs:all>
+    </xs:complexType>
+    <xs:element name="status" type="p:AmandmanStatus"/>
 </xs:schema>
