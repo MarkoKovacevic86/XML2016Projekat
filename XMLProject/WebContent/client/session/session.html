@@ -3,18 +3,22 @@
 		<h2 align="center">Sednica</h2>
 		<br> <br>
 		<div class="container">
-			<table>
+			<table class="table">
 				<tr ng-repeat="act in acts">
 					<td><a class="amandmani" ng-click="show = !show">{{act.naziv.value}}
 							{{act.datum.value}}</a>
-						<ul ng-repeat="act in acts" ng-show="show">
-							<li>{{act.naziv.value}}</li>
+						<ul ng-repeat="act in acts" ng-show="nacelo">
+							<li>{{act.naziv.value}} <input type="number" min="0" max="1000"> &nbsp; / &nbsp; 
+							<input type="number" min="0" max="1000"></li>
 						</ul></td>
 					<td>
-						<div>
+						<!-- <div>
 							<button class="btn btn-info" ng-click="show = !show">Usvoji
 								u celosti</button>
-						</div>
+						</div> -->
+						Usvaja se u nacelu<br>
+						<label><input type="radio" ng-model="nacelo" ng-value=true>Da</label>
+						<label><input type="radio" ng-model="nacelo" ng-value=false>Ne</label>
 					</td>
 				</tr>
 			</table>
