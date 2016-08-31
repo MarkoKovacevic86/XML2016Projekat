@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:Akt xmlns:p="http://www.parlament.gov.rs/propisi/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.parlament.gov.rs/propisi/ ../../schema/akt.xsd ">
+  <p:Glavni_deo/>
+  <p:Sporedni_deo>
+    <p:Akt_u_proceduri>
+      <p:Predlagac>p:Predlagac</p:Predlagac>
+      <p:Upucuje_se>p:Upucuje_se</p:Upucuje_se>
+      <p:Meta_podaci>
+        <p:Oznaka>p:Oznaka</p:Oznaka>
+        <p:Mesto>p:Mesto</p:Mesto>
+        <p:Datum>2001-01-01</p:Datum>
+        <p:Vrsta>p:Vrsta</p:Vrsta>
+        <p:Naziv>p:Naziv</p:Naziv>
+        <p:BrUkupnihGlasova>0</p:BrUkupnihGlasova>
+        <p:BrPozitivnihGlasova>0</p:BrPozitivnihGlasova>
+      </p:Meta_podaci>
+    </p:Akt_u_proceduri>
+  </p:Sporedni_deo>
+</p:Akt>

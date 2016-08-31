@@ -110,7 +110,7 @@ public class SporedniDeo {
      * Gets the value of the donetOdStrane property.
      * 
      * @return
-     *     possible object is
+     *     possible object is XMLWriter
      *     {@link String }
      *     
      */

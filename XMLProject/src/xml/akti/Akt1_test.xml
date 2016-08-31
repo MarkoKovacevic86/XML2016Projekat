@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:Akt 
+xmlns:p="http://www.parlament.gov.rs/propisi/" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.parlament.gov.rs/propisi/ ../../schema/akt.xsd "  
+status="donet">
+  <p:Glavni_deo/>
+  <p:Sporedni_deo>
+   <p:Donet_akt>
+      <p:Donet_od_strane>string</p:Donet_od_strane>
+      <p:Po_postupku>string</p:Po_postupku>
+      <p:Po_cilju>string</p:Po_cilju>
+      <p:Meta_podaci>
+        <p:Oznaka>doc1</p:Oznaka>
+        <p:Datum>2017-10-29</p:Datum>
+        <p:Vrsta>Odluka</p:Vrsta>
+        <p:Naziv>Ja dono Akt</p:Naziv>
+      </p:Meta_podaci>
+      <p:Osnov_donosenja>string</p:Osnov_donosenja>
+    </p:Donet_akt>
+  </p:Sporedni_deo>
+</p:Akt>
