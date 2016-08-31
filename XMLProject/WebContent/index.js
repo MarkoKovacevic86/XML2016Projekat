@@ -25,6 +25,10 @@
 			url : '/session',
 			templateUrl : 'client/session/session.html',
 			controller : 'sessionCtrl'
+		}).state('actsInProcedure', {
+			url : '/actsInProcedure',
+			templateUrl : 'client/acts/actsInProcedure.html',
+			controller : 'actsCtrl'
 		})
 	}
 
@@ -32,8 +36,7 @@
 		$rootScope.$on('$stateChangeSuccess', function(event, toState,
 				toParams, fromState, fromParams) {
 			// lista javnih stanja
-			var publicStates = [ 'login', 'acts', 'amendments',/* 'entry', */
-			'' ];
+			var publicStates = [ 'login', 'acts', 'actsInProcedure', '' ];
 			var restrictedState = publicStates.indexOf(toState.name) === -1;
 			if (restrictedState && !Login.getCurrentUser()) {
 				$state.go('login');
