@@ -35,6 +35,15 @@ public class ActService {
 		}
 	}
 	
+	
+	@GET
+	@Path("/getActsInProcedure")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getActsInProcedure(){
+		System.out.println("Usao u aktove u procjeduri");
+		return null;
+	}
+	
 	@POST
 	@Path("/addAct")
 	public Response add(){

@@ -12,6 +12,10 @@
 										method : 'GET',
 										url : 'http://localhost:8081/XMLProject/rest/acts/getActs'
 									},
+									getActsInProcedure : {
+										method : 'GET',
+										url : 'http://localhost:8081/XMLProject/rest/acts/getActsInProcedure'
+									},
 									deleteAct : {
 										method : 'DELETE',
 										url : 'acts/deleteAct/:id',

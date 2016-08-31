@@ -28,7 +28,7 @@
 		}).state('actsInProcedure', {
 			url : '/actsInProcedure',
 			templateUrl : 'client/acts/actsInProcedure.html',
-			controller : 'actsCtrl'
+			controller : 'actsInProcedureCtrl'
 		})
 	}
 
