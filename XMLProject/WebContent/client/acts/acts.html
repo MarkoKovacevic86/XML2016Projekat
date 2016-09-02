@@ -8,13 +8,13 @@
 			<table>
 				<tr>
 					<td>Datum predlaganja:</td>
-					<td><input type="date" ng-model="search.date"
+					<td><input type="text" ng-model="srch.datum.value"
 						class="form-control" style="margin-left: 10px;" /></td>
 				</tr>
 
 				<tr>
 					<td>Naslov:</td>
-					<td><input type="text" ng-model="search.naslov"
+					<td><input type="text" ng-model="srch.naziv.value"
 						class="form-control" style="margin-top: 10px; margin-left: 10px;" /></td>
 				</tr>
 
@@ -32,7 +32,7 @@
 					<th>Datum</th>
 					<th>Vrsta</th>
 				</tr>
-				<tr ng-repeat="act in acts">
+				<tr ng-repeat="act in acts | filter:srch">
 					<td width="60%">{{act.naziv.value}}</td>
 					<td>{{act.datum.value}}</td>
 					<td>{{act.vrsta.value}}</td>
