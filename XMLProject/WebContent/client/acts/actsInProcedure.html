@@ -3,16 +3,16 @@
 		<h2 align="center">Akti u proceduri</h2>
 		<br /> <br>
 		<div class="container">
-			<table>
+		<table>
 				<tr>
 					<td>Datum predlaganja:</td>
-					<td><input type="date" ng-model="search.date"
+					<td><input type="text" ng-model="srch.datum.value"
 						class="form-control" style="margin-left: 10px;" /></td>
 				</tr>
 
 				<tr>
 					<td>Naslov:</td>
-					<td><input type="text" ng-model="search.naslov"
+					<td><input type="text" ng-model="srch.naziv.value"
 						class="form-control" style="margin-top: 10px; margin-left: 10px;" /></td>
 				</tr>
 
@@ -29,11 +29,13 @@
 					<th>Naziv</th>
 					<th>Datum</th>
 					<th>Vrsta</th>
+					<th>&nbsp;</th>
 				</tr>
-				<tr ng-repeat="act in actsInProcedure">
+				<tr ng-repeat="act in actsInProcedure | filter:srch">
 					<td width="60%">{{act.naziv.value}}</td>
 					<td>{{act.datum.value}}</td>
 					<td>{{act.vrsta.value}}</td>
+					<td><button class="btn btn-danger" ng-click="povuciAkt(act)">Povuci akt</button>
 				</tr>
 			</table>
 		</div>
