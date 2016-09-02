@@ -25,12 +25,12 @@ import com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl;
  * XML dokumenta primenom GRDDL transformacije.
  * 
  */
-public class RdftoXml {
+public class MetadataExtractor {
 	
 	private TransformerFactory transformerFactory;
 
 	
-	public RdftoXml() throws SAXException, IOException {
+	public MetadataExtractor() throws SAXException, IOException {
 		
 		// Setup the XSLT transformer factory
 		transformerFactory = new TransformerFactoryImpl();
@@ -69,7 +69,7 @@ public class RdftoXml {
 	
 	public void test() throws Exception {
 
-		System.out.println("[INFO] " + RdftoXml.class.getSimpleName());
+		System.out.println("[INFO] " + MetadataExtractor.class.getSimpleName());
 		
 		String filePath = "rdf/Prcmilojka.rdf";
 		
@@ -87,7 +87,7 @@ public class RdftoXml {
 	}
 
 	public static void main(String[] args) throws Exception {
-		new RdftoXml().test();
+		new MetadataExtractor().test();
 	}
 
 }
