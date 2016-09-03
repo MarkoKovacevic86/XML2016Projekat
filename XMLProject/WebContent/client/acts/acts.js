@@ -2,7 +2,7 @@
 
 	angular.module('acts', [ 'actsResource' ])
 
-	.controller('actsCtrl', function($scope, Acts) {
+	.controller('actsCtrl', function($scope,$http, Acts) {
 
 		$scope.act = {};
 
@@ -24,14 +24,22 @@
 			var fileReader = new FileReader();
 			fileReader.onloadend = function(e) {
 				var data = e.target.result;
-				Acts.addAct({
-					act : data
-				});
+				console.log(data)
+			$http({
+							method : "POST",
+							url : 'http://localhost:8081/XMLProject/rest/acts/addAct/',
+							headers : {
+								"Content-Type": "application/xml"
+							},
+							data : data
+						})
 			}
 			fileReader.readAsBinaryString(file);
 		}
 
 		$scope.addAct = function() {
+			console.log('kova')
+			console.log(act)
 			Acts.addAct({
 				act : act
 			});

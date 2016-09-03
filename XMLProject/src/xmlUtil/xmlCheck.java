@@ -27,7 +27,7 @@ public class xmlCheck {
 	}
 	
 	public Response CheckAct(Akt akt, String path) throws SAXException, JAXBException, FileNotFoundException{
-		SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI);
+		SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 		if(sf == null){
 			System.out.println("Schema not valid or non existant");
 			return Response.status(404).build();
