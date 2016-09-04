@@ -4,6 +4,15 @@
     xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
     targetNamespace="http://www.parlament.gov.rs/propisi/" elementFormDefault="qualified"
     vc:minVersion="1.0" vc:maxVersion="1.1">
+    <xs:element name="Amandman">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="p:Glavni_deo"/>
+                <xs:element ref="p:Sporedni_deo"/>
+            </xs:sequence>
+            <xs:attribute name="status" type="p:TStatusAmandmana"/>
+        </xs:complexType>
+    </xs:element>
     <xs:element name="Glavni_deo">
         <xs:complexType>
             <xs:sequence>
@@ -12,7 +21,6 @@
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="p:Stav"/>
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="p:Tacka"/>
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="p:Podtacka"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="p:Alineja"/>
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="p:Glava"/>
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="p:Deo"/>
             </xs:sequence>
@@ -338,18 +346,6 @@
             <xs:anyAttribute namespace="##any"/>
         </xs:complexType>
     </xs:element>
-    <xs:element name="Alineja">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="Sadrzaj" type="xs:string"/>
-                <xs:element ref="p:status"/>
-            </xs:sequence>
-            <xs:attribute name="oznaka" type="xs:string"/>
-            <xs:attribute name="naziv" type="xs:string"/>
-            <xs:attribute name="opis" type="xs:string"/>
-            <xs:anyAttribute namespace="##any"/>
-        </xs:complexType>
-    </xs:element>
     <xs:element name="Glava">
         <xs:complexType>
             <xs:sequence>
@@ -397,13 +393,5 @@
             <xs:anyAttribute/>
         </xs:complexType>
     </xs:element>
-    <xs:element name="Amandman">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element ref="p:Glavni_deo"/>
-                <xs:element ref="p:Sporedni_deo"/>
-            </xs:sequence>
-            <xs:attribute name="status" type="p:TStatusAmandmana"/>
-        </xs:complexType>
-    </xs:element>
+
 </xs:schema>

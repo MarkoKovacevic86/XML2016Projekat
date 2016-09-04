@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:Amandman xmlns:p="http://www.parlament.gov.rs/propisi/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.parlament.gov.rs/propisi/ ../../schema/amandman.xsd ">
+  <p:Glavni_deo/>
+  <p:Sporedni_deo>
+    <p:Pravni_osnov_donosenja>p:Pravni_osnov_donosenja</p:Pravni_osnov_donosenja>
+    <p:Donet_od_strane>p:Donet_od_strane</p:Donet_od_strane>
+    <p:Postupak_donosenja>p:Postupak_donosenja</p:Postupak_donosenja>
+    <p:Cilj_donosenja>p:Cilj_donosenja</p:Cilj_donosenja>
+    <p:Meta_podaci>
+      <p:BrPozitivnihGlasova>0</p:BrPozitivnihGlasova>
+      <p:BrUkupnihGlasova>0</p:BrUkupnihGlasova>
+      <p:Oznaka>p:Oznaka</p:Oznaka>
+      <p:Mesto>p:Mesto</p:Mesto>
+      <p:Datum>2001-01-01</p:Datum>
+      <p:Vrsta>p:Vrsta</p:Vrsta>
+    </p:Meta_podaci>
+  </p:Sporedni_deo>
+</p:Amandman>
