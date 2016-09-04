@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Akt xmlns="http://www.parlament.gov.rs/propisi">
-    <Glavni_deo/>
-    <Sporedni_deo about="http://www.parlament.gov.rs/propisi/akti/doneti/doc3">
-        <Akt_u_proceduri>
-            <Predlagac>p:Predlagac</Predlagac>
-            <Upucuje_se>p:Upucuje_se</Upucuje_se>
-            <Meta_podaci>
-                <Oznaka datatype="xs:string" property="pred:oznaka">doc1</Oznaka>
-                <Mesto datatype="xs:string" property="pred:mesto">Beograd</Mesto>
-                <Datum datatype="xs:date" property="pred:datum">2016-07-01</Datum>
-                <Vrsta datatype="xs:string" property="pred:vrsta">Zakon</Vrsta>
-                <Naziv datatype="xs:string" property="pred:naziv">ja dono akt</Naziv>
-                <BrUkupnihGlasova>0</BrUkupnihGlasova>
-                <BrPozitivnihGlasova>0</BrPozitivnihGlasova>
-            </Meta_podaci>
-        </Akt_u_proceduri>
-    </Sporedni_deo>
-</Akt>
+<p:Akt xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/ns/rdfa#" xmlns:xs="http://www.w3.org/2001/XMLSchema#" xmlns:p="http://www.parlament.gov.rs/propisi" xmlns:pred="http://www.parlament.gov.rs/propisi/predicate/" xmlns:ns1="http://www.parlament.gov.rs/generic_types">
+    <p:Glavni_deo/>
+    <p:Sporedni_deo about="http://www.parlament.gov.rs/propisi/akti/doneti/doc3">
+        <p:Akt_u_proceduri>
+            <p:Predlagac>p:Predlagac</p:Predlagac>
+            <p:Upucuje_se>p:Upucuje_se</p:Upucuje_se>
+            <p:Meta_podaci>
+                <p:Oznaka datatype="xs:string" property="pred:oznaka">doc1</p:Oznaka>
+                <p:Mesto datatype="xs:string" property="pred:mesto">Beograd</p:Mesto>
+                <p:Datum datatype="xs:date" property="pred:datum">2016-07-01</p:Datum>
+                <p:Vrsta datatype="xs:string" property="pred:vrsta">Zakon</p:Vrsta>
+                <p:Naziv datatype="xs:string" property="pred:naziv">ja dono akt</p:Naziv>
+                <p:BrUkupnihGlasova>0</p:BrUkupnihGlasova>
+                <p:BrPozitivnihGlasova>0</p:BrPozitivnihGlasova>
+            </p:Meta_podaci>
+        </p:Akt_u_proceduri>
+    </p:Sporedni_deo>
+</p:Akt>
