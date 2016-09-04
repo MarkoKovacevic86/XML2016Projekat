@@ -4,14 +4,18 @@
 			.module('amendments', [ 'amendmentsResource' ])
 			.controller(
 					'amendmentsCtrl',
-					function($scope, Amendments, Acts) {
+					function($scope,$http, Amendments, Acts) {
 
 						$scope.amendments = {};
 						
+						init();
+						
+						function init(){
 						$scope.act = Acts.getActs();
 						$scope.act.$promise.then(function(data) {
 							$scope.$parent.acts = data.results.bindings;
 						})
+						}
 
 						$scope.uploadAmendment = function() {
 							var file = document.getElementById('file').files[0];
@@ -22,11 +26,15 @@
 								var data = e.target.result;
 								$http({
 									method : "POST",
-									url : 'http://localhost:8081/XMLProject/rest/amendments/suggestAmendments',
+									url : 'http://localhost:8081/XMLProject/rest/amendments/suggestAmendment',
 									headers : {
 										"Content-Type" : "application/xml"
 									},
 									data : data
+								}).success(function(){
+									init();
+								}).error(function(){
+									alert('XML dokument nije validan !')
 								})
 
 							}
@@ -36,11 +44,12 @@
 						
 						$scope.actAmendments = function(act){
 							$scope.am = Amendments.actAmendments({id : act.oznaka.value});
-
+							
 						}
 						
 						$scope.povuciAmandman = function(amId){
-							Amendments.deleteAmendment({id : amId})
+							Amendments.deleteAmendment({id : amId.oznaka.value})
+							init();
 						}
 					})
 

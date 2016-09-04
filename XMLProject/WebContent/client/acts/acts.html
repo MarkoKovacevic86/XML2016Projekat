@@ -31,7 +31,14 @@
 					<th>Vrsta</th>
 				</tr>
 				<tr ng-repeat="act in acts | filter:srch">
-					<td width="60%">{{act.naziv.value}}</td>
+<!-- 					<td width="60%">{{act.naziv.value}}</td>
+ -->					<td width="60%"><a class="amandmani" ng-click="show = !show">{{act.naziv.value}}
+							{{act.datum.value}}</a>
+							<ul ng-repeat="act in acts" ng-show="nacelo">
+							<li><u>{{act.naziv.value}}</u> : Za <input type="number" min="0" max="1000"> &nbsp; / &nbsp; 
+							Protiv <input type="number" min="0" max="1000"> <button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+							</button></li>
+						</ul></td>
 					<td>{{act.datum.value}}</td>
 					<td>{{act.vrsta.value}}</td>
 				</tr>

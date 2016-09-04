@@ -5,19 +5,16 @@
 	.controller('actsCtrl', function($scope,$http, Acts) {
 
 		$scope.act = {};
-
+		
+		init();
+		
+		function init() {
 		$scope.act = Acts.getActs();
 		$scope.act.$promise.then(function(data) {
 			$scope.$parent.acts = data.results.bindings;
 		})
-
-		/*
-				$scope.actIP = Acts.getActsInProcedure();
-				$scope.actIP.$promise.then(function(data){
-					$scope.$parent.actsInProcedure = data.results.bindings;
-				
-			})*/
-
+		
+		}
 		$scope.uploadAct = function() {
 			var file = document.getElementById('file').files[0];
 			console.log(file);
@@ -32,6 +29,10 @@
 								"Content-Type": "application/xml"
 							},
 							data : data
+						}).success(function(){
+							init();
+						}).error(function(){
+							alert('XML dokument nije validan !')
 						})
 			}
 			fileReader.readAsBinaryString(file);
@@ -44,7 +45,7 @@
 				act : act
 			});
 		}
-	}).controller('actsInProcedureCtrl', function($scope, Acts) {
+	}).controller('actsInProcedureCtrl', function($scope,$http, Acts) {
 		
 		$scope.actIP = Acts.getActs();
 		$scope.actIP.$promise.then(function(data) {
@@ -56,6 +57,31 @@
 			console.log('aktovi u proceduri')
 			//$scope.$parent.actsInProcedure = data.results.bindings;
 		})
+		
 
+		$scope.uploadAct = function() {
+			var file = document.getElementById('file').files[0];
+			console.log(file);
+			var fileReader = new FileReader();
+			fileReader.onloadend = function(e) {
+				var data = e.target.result;
+				console.log(data)
+				$http({
+					method : "POST",
+					url : 'http://localhost:8081/XMLProject/rest/acts/addAct',
+					headers : {
+						"Content-Type" : "application/xml"
+					},
+					data : data
+				}).success(function() {
+					init();
+				}).error(function() {
+					alert('XML dokument nije validan !')
+				})
+			}
+			fileReader.readAsBinaryString(file);
+		}
+		
+		
 	})
 }(angular))
