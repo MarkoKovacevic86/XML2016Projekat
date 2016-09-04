@@ -36,9 +36,7 @@ public class RDFtoTriples {
 
 	public static void convert(ConnectionProperties props, String xmlFilePath, String rdfFilePath, String sparqlNamedGraph, String grddlPath) throws IOException, SAXException, TransformerException {
 
-		
-		
-			client = DatabaseClientFactory.newClient(props.host, props.port, props.database, props.user, props.pass, props.authType);
+		client = DatabaseClientFactory.newClient(props.host, props.port, props.database, props.user, props.pass, props.authType);
 
 		// Create a document manager to work with XML files.
 		GraphManager graphManager = client.newGraphManager();
