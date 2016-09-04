@@ -50,7 +50,18 @@ public class ActService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getActsInProcedure() {
 		System.out.println("Usao u aktove u procjeduri");
-		return null;
+		MySparqlQuery q = new MySparqlQuery(MySparqlQuery.AKT_U_PROCEDURI);
+		String metadataCollection = "/propisi/akti/u_porceduri/metadata";
+		ResponseBuilder response = Response.ok();
+		try {
+			System.out.println(response);
+			return response.status(200).entity(q.execute(DBConnection.loadProperties(), metadataCollection, false))
+					.build();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return response.status(400).build();
+		}
 	}
 
 	@POST
