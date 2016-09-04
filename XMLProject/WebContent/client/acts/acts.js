@@ -51,7 +51,6 @@
 		function init() {
 		$scope.actIP = Acts.getActsInProcedure();
 		$scope.actIP.$promise.then(function(data) {
-			console.log(JSON.stringify(data))
 			console.log('aktovi u proceduri')
 			$scope.$parent.actsInProcedure = data.results.bindings;
 		})
@@ -80,6 +79,11 @@
 			fileReader.readAsBinaryString(file);
 		}
 		
+		$scope.povuciAkt = function(akt){
+			Acts.deleteAct({id : akt.oznaka.value})
+			init();
+		}
+	
 		
 	})
 }(angular))
