@@ -27,7 +27,7 @@
 				console.log(data)
 			$http({
 							method : "POST",
-							url : 'http://localhost:8081/XMLProject/rest/acts/addAct/',
+							url : 'http://localhost:8081/XMLProject/rest/acts/addAct',
 							headers : {
 								"Content-Type": "application/xml"
 							},
@@ -45,7 +45,12 @@
 			});
 		}
 	}).controller('actsInProcedureCtrl', function($scope, Acts) {
-
+		
+		$scope.actIP = Acts.getActs();
+		$scope.actIP.$promise.then(function(data) {
+			$scope.$parent.actsInProcedure = data.results.bindings;
+		})
+		
 		$scope.actIP = Acts.getActsInProcedure();
 		$scope.actIP.$promise.then(function(data) {
 			console.log('aktovi u proceduri')

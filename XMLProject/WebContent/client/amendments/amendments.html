@@ -1,5 +1,4 @@
 <div>
-
 	<div style="align: center; width: 50;" class="jumbotron">
 		<h2 align="center">Amandmani</h2><br/><br>
 	<div class="container">	
@@ -10,9 +9,11 @@
 		<table class="table">
 			<th>Broj</th>
 			<th>Naziv</th>
-			<tr ng-repeat="a in amendments">
-				<td>{{a.broj}}</td>
-				<td>{{a.naziv}}</td>
+			<th>&nbsp;</th>
+			<tr ng-repeat="a in acts">
+				<td>{{a.datum.value}}</td>
+				<td>{{a.naziv.value}}</td>
+				<td><button class="btn btn-danger">Povuci amandman</button></td>
 			</tr>
 		</table>
 		</div>
