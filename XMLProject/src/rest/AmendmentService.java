@@ -18,13 +18,17 @@ public class AmendmentService {
 	@GET
 	@Path("/actAmendments/{id}")
 	public String getAmendments(@PathParam("id") String id) {
+		System.out.println("Usao u amandman");
+		System.out.println(id);
 		return id;
 	}
 
 	@DELETE
-	@Path("/deleteAmendment/id")
-	public void removeAmendment(@PathParam("amId") String amId) {
-
+	@Path("/deleteAmendment/{id}")
+	public void removeAmendment(@PathParam("id") String amId) {
+		System.out.println("Usao u brisanje amandmana");
+		System.out.println(amId);
+		
 	}
 
 	@POST

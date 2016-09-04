@@ -7,7 +7,7 @@
 					function($scope, Amendments, Acts) {
 
 						$scope.amendments = {};
-
+						
 						$scope.act = Acts.getActs();
 						$scope.act.$promise.then(function(data) {
 							$scope.$parent.acts = data.results.bindings;
@@ -32,7 +32,16 @@
 							}
 							fileReader.readAsBinaryString(file);
 						}
+						
+						
+						$scope.actAmendments = function(act){
+							$scope.am = Amendments.actAmendments({id : act.oznaka.value});
 
+						}
+						
+						$scope.povuciAmandman = function(amId){
+							Amendments.deleteAmendment({id : amId})
+						}
 					})
 
 }(angular))

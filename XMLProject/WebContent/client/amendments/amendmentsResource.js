@@ -2,14 +2,15 @@
 	angular.module('amendmentsResource', [ 'ngResource' ]).factory(
 			'Amendments', function($resource) {
 				var Amendments = $resource('/amendments', {}, {
-					getAmendments : {
+					actAmendments : {
 						method : 'GET',
-						url : 'amendments/getAmendments',
+						url : 'http://localhost:8081/XMLProject/rest/amendments/actAmendments/:id',
+						id : '@id',
 						isArray : true
 					},
 					deleteAmendment : {
 						method : 'DELETE',
-						url : 'amendments/deleteAmendment/:id',
+						url : 'http://localhost:8081/XMLProject/rest/amendments/deleteAmendment/:id',
 						id : '@id'
 					},
 					suggestAmendment : {

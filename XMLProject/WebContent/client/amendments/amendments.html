@@ -11,9 +11,11 @@
 			<th>Naziv</th>
 			<th>&nbsp;</th>
 			<tr ng-repeat="a in acts">
-				<td>{{a.datum.value}}</td>
+				<td><a class="amandmani" ng-click="actAmendments(a)">{{a.naziv.value}}
+						{{a.datum.value}}</a>
+				<!-- <td>{{a.datum.value}}</td>
 				<td>{{a.naziv.value}}</td>
-				<td><button class="btn btn-danger">Povuci amandman</button></td>
+				 --><td><button class="btn btn-danger" ng-click="povuciAmandman(a)">Povuci amandman</button></td>
 			</tr>
 		</table>
 		</div>
