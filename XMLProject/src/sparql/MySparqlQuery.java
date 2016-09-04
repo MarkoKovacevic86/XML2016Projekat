@@ -52,7 +52,7 @@ public class MySparqlQuery {
 		query.append(selectTemplate("naziv"));
 		query.append(selectTemplate("datum"));
 		query.append(selectTemplate("vrsta"));
-		query.append(selectTemplate("mesto"));
+		
 		query.append("\n}");
 		System.out.println(query.toString());
 		return query.toString();
