@@ -6,7 +6,7 @@
 //
 
 @javax.xml.bind.annotation.XmlSchema(namespace = "http://www.parlament.gov.rs/propisi", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED,
-xmlns = {@javax.xml.bind.annotation.XmlNs(prefix="ns1", namespaceURI="http://www.parlament.gov.rs/generic_types"),
+xmlns = {
 		@javax.xml.bind.annotation.XmlNs(prefix="", namespaceURI="http://www.w3.org/ns/rdfa#"),
 		@javax.xml.bind.annotation.XmlNs(prefix="xs", namespaceURI="http://www.w3.org/2001/XMLSchema#"),
 		@javax.xml.bind.annotation.XmlNs(prefix="p", namespaceURI="http://www.parlament.gov.rs/propisi"),
