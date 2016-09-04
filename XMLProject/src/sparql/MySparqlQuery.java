@@ -18,6 +18,7 @@ import xmldb.DBConnection.ConnectionProperties;
 public class MySparqlQuery {
 
 	public static final String AKT_DONET = "/propisi/akti/doneti";
+	public static final String AKT_U_PROCEDURI = "/propisi/akti/u_proceduri";
 	private static final String PROPERTY = "http://www.parlament.gov.rs/propisi/predicate/";
 
 	private String type;

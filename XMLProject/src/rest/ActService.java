@@ -85,13 +85,13 @@ public class ActService {
 				//write if valid		
 				if(r.getStatus() == 200){
 					try {
-						xmlToMlDb.xmlToMlDb(DBConnection.loadProperties(), xmlPath, "", "/propisi/akti/doneti", true);
+						xmlToMlDb.xmlToMlDb(DBConnection.loadProperties(), xmlPath, "", "/propisi/akti/u_proceduri", true);
 						String oznaka = akt.getSporedniDeo().getDonetAkt().getMetaPodaci().getOznaka().toString();
 						
 
 						//create metadata
 						String grddlPath = "/home/student/git/XML2016Projekat/XMLProject/src/grddl.xsl";
-						String sparqlNamedGraph = "/propisi/akti/doneti/metadata";
+						String sparqlNamedGraph = "/propisi/akti/u_porceduri/metadata";
 						String rdfFilePath = "/home/student/git/XML2016Projekat/XMLProject/rdf/temp.rdf";
 						RDFtoTriples.convert(DBConnection.loadProperties(), xmlPath, rdfFilePath, sparqlNamedGraph, grddlPath);
 
