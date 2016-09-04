@@ -18,6 +18,7 @@ import org.xml.sax.SAXException;
 
 import jaxB.akt.Akt;
 import sparql.MySparqlQuery;
+import xmlUtil.RDFtoTriples;
 import xmlUtil.xmlCheck;
 import xmlUtil.xmlToMlDb;
 import xmldb.DBConnection;
@@ -60,7 +61,7 @@ public class ActService {
 		//create temp file
 				String path = xmlCheck.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 				path = path.substring(1, path.length());
-				String xmlPath = "temp.xml";
+				String xmlPath = "/home/student/git/XML2016Projekat/XMLProject/src/xml/akti/temp.xml";
 
 				System.out.println("Dosa do ovde");
 				//check validity
@@ -85,14 +86,14 @@ public class ActService {
 				if(r.getStatus() == 200){
 					try {
 						xmlToMlDb.xmlToMlDb(DBConnection.loadProperties(), xmlPath, "", "/propisi/akti/doneti", true);
-						String oznaka = akt.getSporedniDeo().getAktUProceduri().getMetaPodaci().getOznaka().getValue();
+						String oznaka = akt.getSporedniDeo().getDonetAkt().getMetaPodaci().getOznaka().toString();
 						
 
 						//create metadata
-						String grddlPath = "rdf/grddl.xsl";
+						String grddlPath = "/home/student/git/XML2016Projekat/XMLProject/src/grddl.xsl";
 						String sparqlNamedGraph = "/propisi/akti/doneti/metadata";
-						String rdfFilePath = "temp.rdf";
-						xmlUtil.RDFtoTriples.convert(DBConnection.loadProperties(), xmlPath, rdfFilePath, sparqlNamedGraph, grddlPath);
+						String rdfFilePath = "/home/student/git/XML2016Projekat/XMLProject/rdf/temp.rdf";
+						RDFtoTriples.convert(DBConnection.loadProperties(), xmlPath, rdfFilePath, sparqlNamedGraph, grddlPath);
 
 					} catch (IOException | SAXException | TransformerException e) {
 						e.printStackTrace();

@@ -2,6 +2,7 @@ package xmlUtil;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 
 import javax.ws.rs.core.Response;
 import javax.xml.XMLConstants;
@@ -26,8 +27,11 @@ public class xmlCheck {
 		return instance;
 	}
 	
+	public xmlCheck(){}
+	
 	public Response CheckAct(Akt akt, String path) throws SAXException, JAXBException, FileNotFoundException{
 		SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+
 		if(sf == null){
 			System.out.println("Schema not valid or non existant");
 			return Response.status(404).build();

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:p="http://www.parlament.gov.rs/propisi/"
-    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
-    targetNamespace="http://www.parlament.gov.rs/propisi/" elementFormDefault="qualified"
-    vc:minVersion="1.0" vc:maxVersion="1.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.parlament.gov.rs/propisi"
+    xmlns:p="http://www.parlament.gov.rs/propisi"
+    finalDefault="#all" xmlns="http://www.w3.org/ns/rdfa#"
+    xmlns:pred="http://www.parlament.gov.rs/propisi/predicate/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <xs:element name="Akt">
         <xs:complexType>
             <xs:sequence>

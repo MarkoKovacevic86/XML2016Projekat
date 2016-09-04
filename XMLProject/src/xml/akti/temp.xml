@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<p:Akt xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/ns/rdfa#" xmlns:xs="http://www.w3.org/2001/XMLSchema#" xmlns:p="http://www.parlament.gov.rs/propisi" xmlns:pred="http://www.parlament.gov.rs/propisi/predicate/">
+    <p:Glavni_deo/>
+    <p:Sporedni_deo about="http://www.parlament.gov.rs/propisi/akti/doneti/doc2">
+        <p:Donet_akt>
+            <p:Donet_od_strane>p:Predlagac</p:Donet_od_strane>
+            <p:Po_postupku>p:Upucuje_se</p:Po_postupku>
+            <p:Po_cilju>p:bla</p:Po_cilju>
+            <p:Meta_podaci>
+                <p:Oznaka datatype="xs:string" property="pred:oznaka">doc2</p:Oznaka>
+                <p:Datum datatype="xs:date" property="pred:datum">2015-07-01</p:Datum>
+                <p:Vrsta datatype="xs:string" property="pred:vrsta">Zakon</p:Vrsta>
+                <p:Naziv datatype="xs:string" property="pred:naziv">Akt za pravljenje peticije da naucimo Popa da koristi Git</p:Naziv>
+            </p:Meta_podaci>
+            <p:Osnov_donosenja>dsa</p:Osnov_donosenja>
+        </p:Donet_akt>
+    </p:Sporedni_deo>
+</p:Akt>

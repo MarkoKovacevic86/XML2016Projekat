@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<p:Akt 
-	xmlns="http://www.w3.org/ns/rdfa#"
-	xmlns:p="http://www.parlament.gov.rs/propisi/" 
-	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:pred="http://www.parlament.gov.rs/propisi/predicate/" 
-	xsi:schemaLocation="http://www.parlament.gov.rs/propisi/ ../../schema/akt.xsd ">
+<p:Akt xmlns:p="http://www.parlament.gov.rs/propisi" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.w3.org/ns/rdfa#"
+xmlns:pred="http://www.parlament.gov.rs/propisi/predicate/" 
+xsi:schemaLocation="http://www.parlament.gov.rs/propisi ../../schema/akt.xsd ">
+
   <p:Glavni_deo/>
-  <p:Sporedni_deo about="http://www.parlament.gov.rs/propisi/akti/doneti/doc3">
+<p:Sporedni_deo about="http://www.parlament.gov.rs/propisi/akti/doneti/doc3">
     <p:Akt_u_proceduri>
       <p:Predlagac>p:Predlagac</p:Predlagac>
       <p:Upucuje_se>p:Upucuje_se</p:Upucuje_se>
@@ -23,4 +23,3 @@
     </p:Akt_u_proceduri>
   </p:Sporedni_deo>
 </p:Akt>
-
