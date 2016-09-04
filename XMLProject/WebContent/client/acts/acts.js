@@ -46,11 +46,7 @@
 			});
 		}
 	}).controller('actsInProcedureCtrl', function($scope,$http, Acts) {
-		
-		$scope.actIP = Acts.getActs();
-		$scope.actIP.$promise.then(function(data) {
-			$scope.$parent.actsInProcedure = data.results.bindings;
-		})
+		init();
 		
 		function init() {
 		$scope.actIP = Acts.getActsInProcedure();

@@ -5,7 +5,7 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 xsi:schemaLocation="http://www.parlament.gov.rs/propisi ../../schema/akt.xsd ">
   <p:Glavni_deo/>
-<p:Sporedni_deo about="http://www.parlament.gov.rs/propisi/akti/u_proceduri/doc3">
+<p:Sporedni_deo about="http://www.parlament.gov.rs/propisi/akti/u_proceduri/doc5">
     <p:Akt_u_proceduri>
       <p:Predlagac>p:Predlagac</p:Predlagac>
       <p:Upucuje_se>p:Upucuje_se</p:Upucuje_se>

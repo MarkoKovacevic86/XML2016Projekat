@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <p:Akt xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/ns/rdfa#" xmlns:xs="http://www.w3.org/2001/XMLSchema#" xmlns:p="http://www.parlament.gov.rs/propisi" xmlns:pred="http://www.parlament.gov.rs/propisi/predicate/">
     <p:Glavni_deo/>
-    <p:Sporedni_deo about="http://www.parlament.gov.rs/propisi/akti/u_proceduri/doc3">
+    <p:Sporedni_deo about="http://www.parlament.gov.rs/propisi/akti/u_proceduri/doc5">
         <p:Akt_u_proceduri>
             <p:Predlagac>p:Predlagac</p:Predlagac>
             <p:Upucuje_se>p:Upucuje_se</p:Upucuje_se>
