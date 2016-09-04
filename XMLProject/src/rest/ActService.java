@@ -86,7 +86,7 @@ public class ActService {
 				if(r.getStatus() == 200){
 					try {
 						xmlToMlDb.xmlToMlDb(DBConnection.loadProperties(), xmlPath, "", "/propisi/akti/u_proceduri", true);
-						String oznaka = akt.getSporedniDeo().getDonetAkt().getMetaPodaci().getOznaka().toString();
+						//String oznaka = akt.getSporedniDeo().getDonetAkt().getMetaPodaci().getOznaka().toString();
 						
 
 						//create metadata

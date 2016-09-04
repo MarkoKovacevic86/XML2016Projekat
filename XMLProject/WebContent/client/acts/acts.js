@@ -52,12 +52,14 @@
 			$scope.$parent.actsInProcedure = data.results.bindings;
 		})
 		
+		function init() {
 		$scope.actIP = Acts.getActsInProcedure();
 		$scope.actIP.$promise.then(function(data) {
+			console.log(JSON.stringify(data))
 			console.log('aktovi u proceduri')
-			//$scope.$parent.actsInProcedure = data.results.bindings;
+			$scope.$parent.actsInProcedure = data.results.bindings;
 		})
-		
+		}
 
 		$scope.uploadAct = function() {
 			var file = document.getElementById('file').files[0];
