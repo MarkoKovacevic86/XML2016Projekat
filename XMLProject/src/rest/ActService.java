@@ -3,6 +3,7 @@ package rest;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -125,6 +126,7 @@ public class ActService {
 
 	@DELETE
 	@Path("/deleteAct/{id}")
+	@Consumes("application/json")
 	public void removeAmendment(@PathParam("id") String Actid) {
 		System.out.println("Usao u brisanje akt");
 		System.out.println(Actid);

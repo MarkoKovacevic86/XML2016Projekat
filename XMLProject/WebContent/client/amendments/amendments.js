@@ -11,12 +11,11 @@
 						init();
 						
 						function init(){
-						$scope.act = Acts.getActs();
+						$scope.act = Acts.getActsInProcedure();
 						$scope.act.$promise.then(function(data) {
 							$scope.$parent.acts = data.results.bindings;
 						})
-						}
-
+					}
 						$scope.uploadAmendment = function() {
 							var file = document.getElementById('file').files[0];
 							console.log(file);

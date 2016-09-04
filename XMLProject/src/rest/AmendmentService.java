@@ -44,7 +44,6 @@ public class AmendmentService {
 	@Consumes(MediaType.APPLICATION_XML)
 	@Produces(MediaType.APPLICATION_XML)
 	public Amandman changeStatus(Amandman amandman, @PathParam("status") String status) {
-
 		return null;
 	}
 
