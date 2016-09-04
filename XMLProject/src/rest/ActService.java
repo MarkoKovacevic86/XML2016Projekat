@@ -69,6 +69,11 @@ public class ActService {
 	@Produces(MediaType.APPLICATION_XML)
 	public Response add(Akt akt) {
 		System.out.println("Usao u add act");
+		ResponseBuilder response = Response.ok();
+		String about = akt.getSporedniDeo().getAbout().toString();
+		if(about.contains("doneti")){
+			return response.status(400).build();
+		}
 		//create temp file
 				String path = xmlCheck.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 				path = path.substring(1, path.length());
