@@ -4,50 +4,54 @@
 			.module('amendments', [ 'amendmentsResource' ])
 			.controller(
 					'amendmentsCtrl',
-					function($scope,$http, Amendments, Acts) {
+					function($scope, $http, Amendments, Acts) {
 
 						$scope.amendments = {};
-						
+
 						init();
-						
-						function init(){
-						$scope.act = Acts.getActsInProcedure();
-						$scope.act.$promise.then(function(data) {
-							$scope.$parent.acts = data.results.bindings;
-						})
-					}
-						$scope.uploadAmendment = function() {
+
+						function init() {
+							$scope.act = Acts.getActsInProcedure();
+							$scope.act.$promise.then(function(data) {
+								$scope.$parent.acts = data.results.bindings;
+							})
+						}
+						$scope.uploadAmendment = function(act) {
 							var file = document.getElementById('file').files[0];
 							console.log(file);
 							var fileReader = new FileReader();
 							fileReader.onloadend = function(e) {
 								console.log("Usao odje ???")
 								var data = e.target.result;
-								$http({
-									method : "POST",
-									url : 'http://localhost:8081/XMLProject/rest/amendments/suggestAmendment',
-									headers : {
-										"Content-Type" : "application/xml"
-									},
-									data : data
-								}).success(function(){
+								$http(
+										{
+											method : "POST",
+											url : 'http://localhost:8081/XMLProject/rest/amendments/suggestAmendment/'+act.oznaka.value,
+											headers : {
+												"Content-Type" : "application/xml"
+											},
+											data : data
+										}).success(function() {
 									init();
-								}).error(function(){
+								}).error(function() {
 									alert('XML dokument nije validan !')
 								})
 
 							}
 							fileReader.readAsBinaryString(file);
 						}
-						
-						
-						$scope.actAmendments = function(act){
-							$scope.am = Amendments.actAmendments({id : act.oznaka.value});
-							
+
+						$scope.actAmendments = function(act) {
+							$scope.am = Amendments.actAmendments({
+								id : act.oznaka.value
+							});
+
 						}
-						
-						$scope.povuciAmandman = function(amId){
-							Amendments.deleteAmendment({id : amId.oznaka.value})
+
+						$scope.povuciAmandman = function(amId) {
+							Amendments.deleteAmendment({
+								id : amId.oznaka.value
+							})
 							init();
 						}
 					})

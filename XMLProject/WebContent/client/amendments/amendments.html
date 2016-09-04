@@ -1,50 +1,33 @@
 <div>
 	<div style="align: center; width: 50;" class="jumbotron">
-		<h2 align="center">Amandmani</h2><br/><br>
-	<div class="container">	
-		
-		<button class="btn btn-success topright" ng-click="value= !value;">Predlozi
-			novi amandman</button>
+		<h2 align="center">Amandmani</h2>
+		<br /> <br>
+		<div class="container">
 
-		<table class="table">
-			<th>Broj</th>
-			<th>Naziv</th>
-			<th>&nbsp;</th>
-			<tr ng-repeat="a in acts">
-				<td><a class="amandmani" ng-click="actAmendments(a)">{{a.naziv.value}}</a>
-				<!-- <td>{{a.datum.value}}</td>
-				<td>{{a.naziv.value}}</td>
-				 --><td><button class="btn btn-danger" ng-click="povuciAmandman(a)">Povuci amandman</button></td>
-			</tr>
-		</table>
-		</div>
-	<div align="center" class="container" ng-show="value">
-			<br>
-			<br>
-			<div class="form-group">
-				<br>
-				<br>
-				<div style="float: left; width: 40%; border-style: solid;">
-					<br>
-					<br>
-					<h3>Predlozi amandman</h3>
-					<br>
-					<input id="file" type="file" name="fajl" /> <br />
-					<button ng-click="uploadAmendment()" class="btn btn-info">Predlozi</button>
-				</div>
-				<div style="float: left; width: 20%;">
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+			<button class="btn btn-success topright" ng-click="value= !value;">Predlozi
+				novi amandman</button>
 
-				<div style="float: left; width: 40%;">
-					<label for="act">Novi amandman:</label>
-					<textarea class="form-control" rows="15" id="act" ng-model="act"></textarea>
-					<br> <br>
-					<button ng-click="suggestAmendment()" class="btn btn-success">Predlozi</button>
-				</div>
-			</div>
+			<table class="table">
+				<th>Broj</th>
+				<th>Naziv</th>
+				<th>&nbsp;</th>
+				<tr ng-repeat="a in acts">
+					<td><a class="amandmani"
+						ng-click="actAmendments(a);nacelo = !nacelo;value= !value;">{{a.naziv.value}}</a>
+						<ul ng-repeat="act in acts" ng-show="nacelo">
+							<li><u>{{act.naziv.value}} <button class="btn btn-danger btn-xs" ng-click="povuciAmandman(act)">Povuci amandman</button></u>
+						</ul>
+							<br> <br>
+							<div class="form-group" ng-show="value">
+								<br> <br>
+								<div style="border-style: solid;">
+									<h3>Predlozi amandman</h3>
+									<br> <input id="file" type="file" name="fajl" /> <br />
+									<button ng-click="uploadAmendment(a)" class="btn btn-info">Predlozi</button>
+								</div>
+							</div></td>
+				</tr>
+			</table>
 		</div>
-	
 	</div>
-	
-	
 </div>

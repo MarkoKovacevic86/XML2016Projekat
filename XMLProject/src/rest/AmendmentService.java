@@ -28,14 +28,15 @@ public class AmendmentService {
 	public void removeAmendment(@PathParam("id") String amId) {
 		System.out.println("Usao u brisanje amandmana");
 		System.out.println(amId);
-		
+
 	}
 
 	@POST
-	@Path("/suggestAmendment")
+	@Path("/suggestAmendment/{actId}")
 	@Consumes(MediaType.APPLICATION_XML)
-	public Response add(Amandman amandman) {
+	public Response add(@PathParam("actId") String actId) {
 		System.out.println("Usao u predlozi amandman");
+		System.out.println(actId);
 		return null;
 	}
 
