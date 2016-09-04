@@ -1,5 +1,8 @@
 package rest;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -9,8 +12,16 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.xml.bind.JAXBException;
+import javax.xml.transform.TransformerException;
+
+import org.xml.sax.SAXException;
 
 import jaxB.amandman.Amandman;
+
+import xmlUtil.xmlCheck;
+import xmlUtil.xmlToMlDb;
+import xmldb.DBConnection;
 
 @Path("/amendments")
 public class AmendmentService {
@@ -28,15 +39,49 @@ public class AmendmentService {
 	public void removeAmendment(@PathParam("id") String amId) {
 		System.out.println("Usao u brisanje amandmana");
 		System.out.println(amId);
-		
+
 	}
 
 	@POST
-	@Path("/suggestAmendment")
+	@Path("/suggestAmendment/{actId}")
 	@Consumes(MediaType.APPLICATION_XML)
-	public Response add(Amandman amandman) {
+	public Response add(Amandman amandman,@PathParam("actId") String actId) {
 		System.out.println("Usao u predlozi amandman");
-		return null;
+		System.out.println(actId);
+		System.out.println(actId);
+		
+		//create temp file
+		String path = xmlCheck.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+		path = path.substring(1, path.length());
+		String xmlPath = "/home/student/git/XML2016Projekat/XMLProject/src/xml/akti/Atemp.xml";
+				
+				//check validity
+		System.out.println("Dosa do ovde");
+		// check validity
+		Response r = null;
+		r = xmlCheck.getInstance().CheckAmendment(amandman, xmlPath);
+
+		System.out.println("Dosa do ovde");
+		System.out.println(xmlPath);
+				
+				//write if valid		
+		if (r.getStatus() == 200) {
+			try {
+				xmlToMlDb.xmlToMlDb(DBConnection.loadProperties(), xmlPath, "", "/propisi/akti/u_proceduri", true);
+				
+
+				// create metadata
+				String grddlPath = "/home/student/git/XML2016Projekat/XMLProject/src/grddl.xsl";
+				String sparqlNamedGraph = "/propisi/amandmani/u_porceduri/metadata";
+				String rdfFilePath = "/home/student/git/XML2016Projekat/XMLProject/rdf/Atemp.rdf";
+				xmlUtil.RDFtoTriples.convert(DBConnection.loadProperties(), xmlPath, rdfFilePath, sparqlNamedGraph, grddlPath);
+
+			} catch (IOException | SAXException | TransformerException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return r;
 	}
 
 	@POST
