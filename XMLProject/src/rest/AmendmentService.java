@@ -45,9 +45,15 @@ public class AmendmentService {
 	@POST
 	@Path("/suggestAmendment/{actId}")
 	@Consumes(MediaType.APPLICATION_XML)
+
 	public Response add(Amandman amandman,@PathParam("actId") String actId) {
+
+
+
+	
 		System.out.println("Usao u predlozi amandman");
 		System.out.println(actId);
+
 		System.out.println(actId);
 		
 		//create temp file
@@ -82,6 +88,7 @@ public class AmendmentService {
 		}
 
 		return r;
+
 	}
 
 	@POST

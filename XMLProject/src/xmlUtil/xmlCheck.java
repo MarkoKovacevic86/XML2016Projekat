@@ -9,6 +9,7 @@ import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
@@ -16,6 +17,7 @@ import javax.xml.validation.SchemaFactory;
 import org.xml.sax.SAXException;
 
 import jaxB.akt.Akt;
+import jaxB.amandman.Amandman;
 
 public class xmlCheck {
 	
@@ -51,5 +53,37 @@ public class xmlCheck {
 		return Response.status(200).entity("OK").build();
 		
 	}
-
+	
+	public Response CheckAmendment(Amandman amandman, String path){
+		SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+		try{
+			InputStream is = getClass().getResourceAsStream("/resources/amandman.xsd");
+			if(is == null){
+				System.out.println("Schema does not exist");
+				return Response.status(404).build();
+			}
+			StreamSource schemaTypes = new StreamSource(getClass().getResourceAsStream("/resources/generic_types.xsd"));
+			StreamSource schemaAmandman = new StreamSource(getClass().getResourceAsStream("/resources/amandman.xsd"));
+			
+			Source[] schemas = {schemaTypes,schemaAmandman};
+			
+			Schema schema = sf.newSchema(schemas);
+			
+			JAXBContext context = JAXBContext.newInstance(Amandman.class);
+			
+			Marshaller marsh = context.createMarshaller();
+			marsh.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+	        marsh.setSchema(schema);
+	        try {
+				marsh.marshal(amandman, new FileOutputStream(path));
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+		}catch(JAXBException | SAXException e){
+			e.printStackTrace();
+			return Response.status(404).build();
+		}
+		return Response.status(200).entity("OK").build();
+	}
 }
+

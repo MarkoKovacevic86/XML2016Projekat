@@ -386,10 +386,15 @@
                             <xs:element ref="p:Mesto"/>
                             <xs:element ref="p:Datum"/>
                             <xs:element ref="p:Vrsta"/>
+                            <xs:element ref="p:Naziv"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
+            <xs:attribute name="vocab"/>
+            <xs:attribute name="about"/>
+            <xs:attribute name="rel"/>
+            <xs:attribute name="href"/>
             <xs:anyAttribute/>
         </xs:complexType>
     </xs:element>
