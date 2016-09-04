@@ -3,10 +3,11 @@ package rest;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -69,49 +70,56 @@ public class ActService {
 	@Produces(MediaType.APPLICATION_XML)
 	public Response add(Akt akt) {
 		System.out.println("Usao u add act");
-		//create temp file
-				String path = xmlCheck.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-				path = path.substring(1, path.length());
-				String xmlPath = "/home/student/git/XML2016Projekat/XMLProject/src/xml/akti/temp.xml";
+		// create temp file
+		String path = xmlCheck.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+		path = path.substring(1, path.length());
+		String xmlPath = "/home/student/git/XML2016Projekat/XMLProject/src/xml/akti/temp.xml";
 
-				System.out.println("Dosa do ovde");
-				//check validity
-				Response r = null;
-				try {
-					r = xmlCheck.getInstance().CheckAct(akt, xmlPath);
-				} catch (FileNotFoundException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} catch (SAXException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} catch (JAXBException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				
-				System.out.println("Dosa do ovde");
-				System.out.println(xmlPath);
+		System.out.println("Dosa do ovde");
+		// check validity
+		Response r = null;
+		try {
+			r = xmlCheck.getInstance().CheckAct(akt, xmlPath);
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (SAXException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (JAXBException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
-				//write if valid		
-				if(r.getStatus() == 200){
-					try {
-						xmlToMlDb.xmlToMlDb(DBConnection.loadProperties(), xmlPath, "", "/propisi/akti/u_proceduri", true);
-						//String oznaka = akt.getSporedniDeo().getDonetAkt().getMetaPodaci().getOznaka().toString();
-						
+		System.out.println("Dosa do ovde");
+		System.out.println(xmlPath);
 
-						//create metadata
-						String grddlPath = "/home/student/git/XML2016Projekat/XMLProject/src/grddl.xsl";
-						String sparqlNamedGraph = "/propisi/akti/u_porceduri/metadata";
-						String rdfFilePath = "/home/student/git/XML2016Projekat/XMLProject/rdf/temp.rdf";
-						RDFtoTriples.convert(DBConnection.loadProperties(), xmlPath, rdfFilePath, sparqlNamedGraph, grddlPath);
+		// write if valid
+		if (r.getStatus() == 200) {
+			try {
+				xmlToMlDb.xmlToMlDb(DBConnection.loadProperties(), xmlPath, "", "/propisi/akti/u_proceduri", true);
+				// String oznaka =
+				// akt.getSporedniDeo().getDonetAkt().getMetaPodaci().getOznaka().toString();
 
-					} catch (IOException | SAXException | TransformerException e) {
-						e.printStackTrace();
-					}
-				}
+				// create metadata
+				String grddlPath = "/home/student/git/XML2016Projekat/XMLProject/src/grddl.xsl";
+				String sparqlNamedGraph = "/propisi/akti/u_porceduri/metadata";
+				String rdfFilePath = "/home/student/git/XML2016Projekat/XMLProject/rdf/temp.rdf";
+				RDFtoTriples.convert(DBConnection.loadProperties(), xmlPath, rdfFilePath, sparqlNamedGraph, grddlPath);
 
-				return r;
+			} catch (IOException | SAXException | TransformerException e) {
+				e.printStackTrace();
 			}
+		}
 
+		return r;
+	}
+
+	@DELETE
+	@Path("/deleteAct/{id}")
+	public void removeAmendment(@PathParam("id") String Actid) {
+		System.out.println("Usao u brisanje akt");
+		System.out.println(Actid);
+
+	}
 }

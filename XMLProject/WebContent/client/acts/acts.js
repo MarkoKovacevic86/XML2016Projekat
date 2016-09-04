@@ -51,7 +51,6 @@
 		function init() {
 		$scope.actIP = Acts.getActsInProcedure();
 		$scope.actIP.$promise.then(function(data) {
-			console.log(JSON.stringify(data))
 			console.log('aktovi u proceduri')
 			$scope.$parent.actsInProcedure = data.results.bindings;
 		})
