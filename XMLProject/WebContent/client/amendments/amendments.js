@@ -26,7 +26,7 @@
 								$http(
 										{
 											method : "POST",
-											url : 'http://localhost:8081/XMLProject/rest/amendments/suggestAmendment/'+act.oznaka.value,
+											url : 'http://localhost:8081/XMLProject/rest/amendments/suggestAmendment',
 											headers : {
 												"Content-Type" : "application/xml"
 											},
@@ -52,7 +52,6 @@
 							Amendments.deleteAmendment({
 								id : amId.oznaka.value
 							})
-							init();
 						}
 					})
 

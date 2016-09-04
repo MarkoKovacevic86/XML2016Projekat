@@ -3,29 +3,27 @@
 		<h2 align="center">Amandmani</h2>
 		<br /> <br>
 		<div class="container">
-
 			<button class="btn btn-success topright" ng-click="value= !value;">Predlozi
 				novi amandman</button>
-
 			<table class="table">
 				<th>Broj</th>
 				<th>Naziv</th>
-				<th>&nbsp;</th>
 				<tr ng-repeat="a in acts">
 					<td><a class="amandmani"
 						ng-click="actAmendments(a);nacelo = !nacelo;value= !value;">{{a.naziv.value}}</a>
 						<ul ng-repeat="act in acts" ng-show="nacelo">
-							<li><u>{{act.naziv.value}} <button class="btn btn-danger btn-xs" ng-click="povuciAmandman(act)">Povuci amandman</button></u>
+							<li><u>{{act.naziv.value}}
+									<button class="btn btn-danger btn-xs" ng-click="povuciAmandman(act)">Povuci amandman</button>
+							</u></li>
 						</ul>
+						<div style="width: 50%;" class="form-group" ng-show="value">
 							<br> <br>
-							<div class="form-group" ng-show="value">
-								<br> <br>
-								<div style="border-style: solid;">
-									<h3>Predlozi amandman</h3>
-									<br> <input id="file" type="file" name="fajl" /> <br />
-									<button ng-click="uploadAmendment(a)" class="btn btn-info">Predlozi</button>
-								</div>
-							</div></td>
+							<div style="border-style: solid;">
+								<h3>Predlozi amandman</h3>
+								<br> <input id="file" type="file" name="fajl" /> <br />
+								<button ng-click="uploadAmendment(a)" class="btn btn-info">Predlozi</button>
+							</div>
+						</div></td>
 				</tr>
 			</table>
 		</div>
