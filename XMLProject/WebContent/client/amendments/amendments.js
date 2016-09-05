@@ -4,7 +4,7 @@
 			.module('amendments', [ 'amendmentsResource' ])
 			.controller(
 					'amendmentsCtrl',
-					function($scope, $http,$state, Amendments, Acts) {
+					function($scope, $http, $state, Amendments, Acts) {
 
 						$scope.amendments = {};
 
@@ -15,22 +15,20 @@
 							$scope.act.$promise.then(function(data) {
 								$scope.$parent.acts = data.results.bindings;
 							})
-					
+
 							$scope.actAmendmends = Acts.getActsInProcedure();
-							$scope.actAmendmends.$promise.then(function(data) {
-								console.log(JSON.stringify(data.results));
-								$scope.$parent.amendments = data.results.bindings;
-							})
+							$scope.actAmendmends.$promise
+									.then(function(data) {
+										console.log(JSON
+												.stringify(data.results));
+										$scope.$parent.amendments = data.results.bindings;
+									})
 
-
-	
 						}
 
-						
-				
-
-						$scope.uploadAmendment = function(act,index) {
-							var aktic = act.akt.value.substr(53,act.akt.value.length)
+						$scope.uploadAmendment = function(act, index) {
+							var aktic = act.akt.value.substr(53,
+									act.akt.value.length)
 							var file = document.getElementById(act.naziv.value).files[0];
 							console.log(file);
 							var fileReader = new FileReader();
@@ -41,13 +39,14 @@
 								$http(
 										{
 											method : "POST",
-											url : 'http://localhost:8081/XMLProject/rest/amendments/suggestAmendment/'+aktic,
+											url : 'http://localhost:8081/XMLProject/rest/amendments/suggestAmendment/'
+													+ aktic,
 											headers : {
 												"Content-Type" : "application/xml"
 											},
 											data : data
 										}).success(function() {
-									
+
 								}).error(function() {
 									alert('XML dokument nije validan !')
 								})
@@ -58,11 +57,15 @@
 						}
 
 						$scope.actAmendments = function(act) {
-							$scope.actsAM = Amendments.actAmendments({id : act.oznaka.value});
+							$scope.actsAM = Amendments.actAmendments({
+								id : act.oznaka.value
+							});
 							$scope.actsAM.$promise.then(function(data) {
-								console.log(">>>>" + JSON.stringify(data.results));
+								console.log(">>>>"
+										+ JSON.stringify(data.results));
 								$scope.amendments = data.results.bindings;
-								console.log(JSON.stringify($scope.$parent.amendments))
+								console.log(JSON
+										.stringify($scope.$parent.amendments))
 							})
 						}
 
