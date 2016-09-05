@@ -62,6 +62,10 @@
 							var s = amId.amandman.value.split("u_proceduri/")[1];
 							console.log("Povlacim amandman "+ s);
 							Amendments.deleteAmendment({id : s})
+							console.log("Povlacim amandman "+ amId.oznakaAmandmana.value);
+							/*Amendments.deleteAmendment({
+								id : amId.oznaka.value
+							})*/
 							init();
 						}
 					})

@@ -19,6 +19,7 @@
 			$scope.acceptedAM = Amendments.getAcceptedAmendments({id : act.oznaka.value});
 			$scope.acceptedAM.$promise.then(function(data){
 				$scope.amendments = data.results.bindings;
+				console.log(JSON.stringify($scope.amendments));
 			})
 		}
 		

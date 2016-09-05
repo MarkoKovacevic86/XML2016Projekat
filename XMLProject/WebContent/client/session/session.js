@@ -29,11 +29,15 @@
 				$scope.voteForAmendment = function(za, protiv,am) {
 					if (za > protiv) {
 						console.log("Amandman prihvacen")
+						
 						Amendments.update({id : am.oznaka.value});
 						init();
 					} else if (protiv > za) {
 						console.log("Amandman odbijen !")
-						Amendments.deleteAmendment({id : am.oznaka.value})
+						var s = am.amandman.value.split("u_proceduri/")[1]
+						console.log("Povlacim " + s)
+						Amendments.deleteAmendment({id : s})
+						init();
 					}
 				}
 
