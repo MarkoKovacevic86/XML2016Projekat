@@ -72,6 +72,7 @@ public class ActToPdf extends TransformersXMLtoPdf {
 			OutputStream out = new BufferedOutputStream(
 					new FileOutputStream(pdfFile));
 			out.write(((ByteArrayOutputStream) os).toByteArray());
+			out.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

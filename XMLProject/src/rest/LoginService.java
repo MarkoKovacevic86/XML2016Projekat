@@ -56,7 +56,9 @@ public class LoginService {
 						return null;
 					}
 				}
+				
 			}
+			scanner.close();
 
 		} catch (IOException e) {
 			e.printStackTrace();
