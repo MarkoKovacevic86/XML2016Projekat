@@ -4,7 +4,7 @@
 			.module('amendments', [ 'amendmentsResource' ])
 			.controller(
 					'amendmentsCtrl',
-					function($scope, $http, Amendments, Acts) {
+					function($scope, $http,$state, Amendments, Acts) {
 
 						$scope.amendments = {};
 
@@ -15,12 +15,20 @@
 							$scope.act.$promise.then(function(data) {
 								$scope.$parent.acts = data.results.bindings;
 							})
-						}
-						$scope.uploadAmendment = function(act) {
+							
+							$scope.actAmendmends = Acts.getActsInProcedure();
+							$scope.actAmendmends.$promise.then(function(data) {
+								console.log(JSON.stringify(data.results));
+								$scope.$parent.amendments = data.results.bindings;
+							})
 						
+							
+						}
+						$scope.uploadAmendment = function(act,index) {
+							console.log(act);
 							var aktic = act.akt.value.substr(53,act.akt.value.length)
 						
-							var file = document.getElementById('file').files[0];
+							var file = document.getElementById(act.naziv.value).files[0];
 							console.log(file);
 							var fileReader = new FileReader();
 							fileReader.onloadend = function(e) {
