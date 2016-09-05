@@ -53,16 +53,15 @@
 							});
 							$scope.actsAM.$promise.then(function(data) {
 								$scope.amendments = data.results.bindings;
-
+								console.log(JSON.stringify($scope.amendments))	
 							})
 							$scope.hide = !$scope.hide;
 						}
 
 						$scope.povuciAmandman = function(amId) {
-							console.log("Povlacim amandman "+ amId.oznaka.value);
-							Amendments.deleteAmendment({
-								id : amId.oznaka.value
-							})
+							var s = amId.amandman.value.split("u_proceduri/")[1];
+							console.log("Povlacim amandman "+ s);
+							Amendments.deleteAmendment({id : s})
 							init();
 						}
 					})
