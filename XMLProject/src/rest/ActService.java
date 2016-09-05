@@ -80,7 +80,7 @@ public class ActService {
 		//create temp file
 				String path = xmlCheck.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 				path = path.substring(1, path.length());
-				String xmlPath = "/home/student/git/XML2016Projekat/XMLProject/src/xml/akti/temp.xml";
+				String xmlPath = "/home/student/git/XML2016Projekat3/XMLProject/src/xml/akti/temp.xml";
 
 
 
@@ -111,9 +111,9 @@ public class ActService {
 				// akt.getSporedniDeo().getDonetAkt().getMetaPodaci().getOznaka().toString();
 
 				// create metadata
-				String grddlPath = "/home/student/git/XML2016Projekat/XMLProject/src/grddl.xsl";
+				String grddlPath = "/home/student/git/XML2016Projekat3/XMLProject/src/grddl.xsl";
 				String sparqlNamedGraph = "/propisi/akti/u_porceduri/metadata";
-				String rdfFilePath = "/home/student/git/XML2016Projekat/XMLProject/rdf/temp.rdf";
+				String rdfFilePath = "/home/student/git/XML2016Projekat3/XMLProject/rdf/temp.rdf";
 				RDFtoTriples.convert(DBConnection.loadProperties(), xmlPath, rdfFilePath, sparqlNamedGraph, grddlPath);
 
 			} catch (IOException | SAXException | TransformerException e) {

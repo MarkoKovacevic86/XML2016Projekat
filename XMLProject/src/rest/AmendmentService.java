@@ -46,7 +46,7 @@ public class AmendmentService {
 	@Path("/suggestAmendment/{actId}")
 	@Consumes(MediaType.APPLICATION_XML)
 
-	public Response add(Amandman amandman,@PathParam("actId") String actId) {
+	public Response add(Amandman amandman,@PathParam("actId") String actId) throws FileNotFoundException, SAXException, JAXBException {
 
 
 
@@ -59,7 +59,7 @@ public class AmendmentService {
 		//create temp file
 		String path = xmlCheck.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 		path = path.substring(1, path.length());
-		String xmlPath = "/home/student/git/XML2016Projekat/XMLProject/src/xml/akti/Atemp.xml";
+		String xmlPath = "/home/student/git/XML2016Projekat3/XMLProject/src/xml/akti/Atemp.xml";
 				
 				//check validity
 		System.out.println("Dosa do ovde");
@@ -73,13 +73,13 @@ public class AmendmentService {
 				//write if valid		
 		if (r.getStatus() == 200) {
 			try {
-				xmlToMlDb.xmlToMlDb(DBConnection.loadProperties(), xmlPath, "", "/propisi/akti/u_proceduri", true);
+				xmlToMlDb.xmlToMlDb(DBConnection.loadProperties(), xmlPath, "", "/propisi/amandmani/u_proceduri", true);
 				
 
 				// create metadata
-				String grddlPath = "/home/student/git/XML2016Projekat/XMLProject/src/grddl.xsl";
+				String grddlPath = "/home/student/git/XML2016Projekat3/XMLProject/src/grddl.xsl";
 				String sparqlNamedGraph = "/propisi/amandmani/u_porceduri/metadata";
-				String rdfFilePath = "/home/student/git/XML2016Projekat/XMLProject/rdf/Atemp.rdf";
+				String rdfFilePath = "/home/student/git/XML2016Projekat3/XMLProject/rdf/Atemp.rdf";
 				xmlUtil.RDFtoTriples.convert(DBConnection.loadProperties(), xmlPath, rdfFilePath, sparqlNamedGraph, grddlPath);
 
 			} catch (IOException | SAXException | TransformerException e) {
