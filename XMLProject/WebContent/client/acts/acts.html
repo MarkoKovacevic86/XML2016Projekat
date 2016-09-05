@@ -37,11 +37,14 @@
 					<th>Vrsta</th>
 				</tr>
 				<tr ng-repeat="act in acts | filter:srch">
-					<td width="60%"><a class="amandmani" ng-click="show = !show">{{act.naziv.value}}</a>
+					<td width="60%"><a class="amandmani" ng-click="getAcceptedAmendments(act);show = !show">{{act.naziv.value}}</a>
 					<br/><br>
-							<ul ng-repeat="act in acts" ng-show="show">
-							<li><u>{{act.naziv.value}}</u></li>
-						</ul></td>
+					<div ng-show="show">
+								<ul ng-repeat="am in amendments">
+							<li><u>{{am.naziv.value}}</u></li>
+						</ul>
+					</div>
+					</td>
 					<td>{{act.datum.value}}</td>
 					<td>{{act.vrsta.value}}</td>
 				</tr>
