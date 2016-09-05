@@ -10,9 +10,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class ActToHtml extends TransformersXMLToHTML {
-	public static final String ACT_RESOURCE = "/home/student/git/XML2016Projekat3/XMLProject/src/schema/akt_html.xsl";
-	public static final String TEST_ACT = "/home/student/git/XML2016Projekat3/XMLProject/src/xml/akti/Akt1-donet.xml";
-	public static final String HTML_FILE_TEST = "/home/student/git/XML2016Projekat3/XMLProject/html/Temp.html";
+	public static final String ACT_RESOURCE = "/home/student/git/XML2016Projekat/XMLProject/src/schema/akt_html.xsl";
+	public static final String TEST_ACT = "/home/student/git/XML2016Projekat/XMLProject/src/xml/akti/Akt1-donet.xml";
+	public static final String HTML_FILE_TEST = "/home/student/git/XML2016Projekat/XMLProject/html/Temp.html";
 	
 	public ActToHtml() {
 		// TODO Auto-generated constructor stub

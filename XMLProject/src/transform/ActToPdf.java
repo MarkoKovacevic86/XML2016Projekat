@@ -3,6 +3,7 @@ package transform;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,9 +16,9 @@ import net.sf.saxon.TransformerFactoryImpl;
 
 public class ActToPdf extends TransformersXMLtoPdf {
 
-	public static final String PDF_FILE_TEST = "./src/html/Temp01.pdf";
-	public static final String ACT_RESOURCE ="./src/schema/aktPdf.xsl";
-	public static final String TEST_ACT = "./src/xml/akti/Prcmilojka.xml";
+	public static final String PDF_FILE_TEST = "/home/student/git/XML2016Projekat/XMLProject/html/tempPdf.pdf";
+	public static final String ACT_RESOURCE = "/home/student/git/XML2016Projekat/XMLProject/src/schema/aktPdf.xsl";
+	public static final String TEST_ACT = "/home/student/git/XML2016Projekat/XMLProject/src/xml/akti/Akt1-donet.xml";
 
 	public ActToPdf(String pathToConf) throws SAXException, IOException {
 		// Initialize FOP factory object
@@ -77,5 +78,5 @@ public class ActToPdf extends TransformersXMLtoPdf {
 		}
 
 	}
-
+	
 }

@@ -45,7 +45,9 @@
 							$state.go('amendments')
 						}
 
+						$scope.hide = false;
 						$scope.actAmendments = function(act) {
+							$scope.amId = $scope.id ? ($scope.amId = null)	: act.oznaka.value;
 							$scope.actsAM = Amendments.actAmendments({
 								id : act.oznaka.value
 							});
@@ -53,7 +55,7 @@
 								$scope.amendments = data.results.bindings;
 
 							})
-							
+							$scope.hide = !$scope.hide;
 						}
 
 						$scope.povuciAmandman = function(amId) {
@@ -61,6 +63,7 @@
 							Amendments.deleteAmendment({
 								id : amId.oznaka.value
 							})
+							init();
 						}
 					})
 
