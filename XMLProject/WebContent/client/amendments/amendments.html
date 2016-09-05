@@ -9,18 +9,18 @@
 				<th>Broj</th>
 				<th>Naziv</th>
 				<tr ng-repeat="a in acts">
-					<td><a class="amandmani"
-						ng-click="actAmendments(a);nacelo = !nacelo;value= !value;">{{a.naziv.value}}</a>
-						<ul ng-repeat="am in amendments" ng-show="nacelo">
+					<td><a class="amandmani" ng-click="actAmendments(a);nacelo = !nacelo;value= !value;">{{a.naziv.value}}</a>
+						<br><br><ul font-size="20px;" ng-repeat="am in amendments" ng-show="nacelo">
 							<li><u>{{am.naziv.value}}
-									<button class="btn btn-danger btn-xs" ng-click="povuciAmandman(am)">Povuci amandman</button>
+									<button class="btn btn-danger btn-xs"
+										ng-click="povuciAmandman(am)">Povuci amandman</button>
 							</u></li>
 						</ul>
-						<div style="width: 50%;" class="form-group" ng-show="value">
+						<div style="width: 50%;" class="form-group" ng-if="value">
 							<br> <br>
 							<div style="border-style: solid;">
 								<h3>Predlozi amandman</h3>
-								<br> <input id="file" type="file" name="fajl" /> <br />
+								<br> <input id="akt.oznaka.value" type="file" name="fajl" /> <br />
 								<button ng-click="uploadAmendment(a)" class="btn btn-info">Predlozi</button>
 							</div>
 						</div></td>

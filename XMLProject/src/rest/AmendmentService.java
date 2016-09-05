@@ -33,7 +33,7 @@ public class AmendmentService {
 		System.out.println(id);
 		
 		
-		String upit = "SELECT * FROM </propisi/amandmani/u_proceduri/metadata> {"+
+		String upit = "SELECT * FROM </propisi/amandmani/u_porceduri/metadata> {"+
 				   " ?amandman <http://www.parlament.gov.rs/propisi/predicate/belongsTo> ?akt ."+
 				    "{"+
 				     "   SELECT * {"+

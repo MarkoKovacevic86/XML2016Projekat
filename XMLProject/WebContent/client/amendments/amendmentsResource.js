@@ -11,8 +11,7 @@
 									actAmendments : {
 										method : 'GET',
 										url : 'http://localhost:8081/XMLProject/rest/amendments/actAmendments/:id',
-										id : '@id',
-										isArray : true
+										id : '@id'
 									},
 									deleteAmendment : {
 										method : 'DELETE',

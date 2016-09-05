@@ -15,15 +15,11 @@
 							$scope.act.$promise.then(function(data) {
 								$scope.$parent.acts = data.results.bindings;
 							})
-							
-							$scope.actAmendmends = Acts.getActsInProcedure();
-							$scope.actAmendmends.$promise.then(function(data) {
-								console.log(JSON.stringify(data.results));
-								$scope.$parent.amendments = data.results.bindings;
-							})
 						
 							
 						}
+						
+				
 						$scope.uploadAmendment = function(act) {
 						
 							var aktic = act.akt.value.substr(53,act.akt.value.length)
@@ -52,14 +48,15 @@
 							}
 							fileReader.readAsBinaryString(file);
 							$state.go('amendments')
-							
 						}
 
 						$scope.actAmendments = function(act) {
-							$scope.am = Amendments.actAmendments({
-								id : act.oznaka.value
-							});
-
+							$scope.actsAM = Amendments.actAmendments({id : act.oznaka.value});
+							$scope.actsAM.$promise.then(function(data) {
+								console.log(">>>>" + JSON.stringify(data.results));
+								$scope.amendments = data.results.bindings;
+								console.log(JSON.stringify($scope.$parent.amendments))
+							})
 						}
 
 						$scope.povuciAmandman = function(amId) {
