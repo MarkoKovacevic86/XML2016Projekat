@@ -4,7 +4,7 @@
 			.module('amendments', [ 'amendmentsResource' ])
 			.controller(
 					'amendmentsCtrl',
-					function($scope, $http, Amendments, Acts) {
+					function($scope, $http,$state, Amendments, Acts) {
 
 						$scope.amendments = {};
 
@@ -15,6 +15,14 @@
 							$scope.act.$promise.then(function(data) {
 								$scope.$parent.acts = data.results.bindings;
 							})
+							
+							$scope.actAmendmends = Acts.getActsInProcedure();
+							$scope.actAmendmends.$promise.then(function(data) {
+								console.log(JSON.stringify(data.results));
+								$scope.$parent.amendments = data.results.bindings;
+							})
+						
+							
 						}
 						$scope.uploadAmendment = function(act) {
 						
@@ -36,13 +44,15 @@
 											},
 											data : data
 										}).success(function() {
-									init();
+									
 								}).error(function() {
 									alert('XML dokument nije validan !')
 								})
 
 							}
 							fileReader.readAsBinaryString(file);
+							$state.go('amendments')
+							
 						}
 
 						$scope.actAmendments = function(act) {

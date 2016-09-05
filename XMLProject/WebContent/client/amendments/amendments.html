@@ -11,9 +11,9 @@
 				<tr ng-repeat="a in acts">
 					<td><a class="amandmani"
 						ng-click="actAmendments(a);nacelo = !nacelo;value= !value;">{{a.naziv.value}}</a>
-						<ul ng-repeat="act in acts" ng-show="nacelo">
-							<li><u>{{act.naziv.value}}
-									<button class="btn btn-danger btn-xs" ng-click="povuciAmandman(act)">Povuci amandman</button>
+						<ul ng-repeat="am in amendments" ng-show="nacelo">
+							<li><u>{{am.naziv.value}}
+									<button class="btn btn-danger btn-xs" ng-click="povuciAmandman(am)">Povuci amandman</button>
 							</u></li>
 						</ul>
 						<div style="width: 50%;" class="form-group" ng-show="value">
