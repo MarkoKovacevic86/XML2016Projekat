@@ -52,9 +52,26 @@ public class AmendmentService {
 	@GET
 	@Path("/getAcceptedAmendments/{id}")
 	public String getAcceptedAmendments(@PathParam("id") String id) throws IOException {
+		System.out.println("Usao u amandman doneti");
+		System.out.println(id);
 		
-		return null;
+		
+		String upit = "SELECT * FROM </propisi/amandmani/doneti/metadata> {"+
+				   " ?amandman <http://www.parlament.gov.rs/propisi/predicate/belongsTo> ?akt ."+
+				    "{"+
+				     "   SELECT * {"+
+				      "      ?amandman <http://www.parlament.gov.rs/propisi/predicate/oznaka> ?oznaka ."+
+				       "     ?amandman <http://www.parlament.gov.rs/propisi/predicate/naziv> ?naziv ."+
+				        "}"+
+				     "}"+
+				    "FILTER ( str(?akt) = \"http://www.parlament.gov.rs/propisi/akti/doneti/" + id + "\")"+
+				"}";
+				String r = MySparqlQuery.executeFromString(DBConnection.loadProperties(), upit);
+		
+				System.out.println(id);
+				return r;
 	}
+	
 
 	@DELETE
 	@Path("/deleteAmendment/{id}")
