@@ -387,6 +387,7 @@
                             <xs:element ref="p:Datum"/>
                             <xs:element ref="p:Vrsta"/>
                             <xs:element ref="p:Naziv"/>
+                            <xs:element ref="p:OznakaAmandmana"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
@@ -399,4 +400,5 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:element name="OznakaAmandmana" type="xs:string"/>
 </xs:schema>
