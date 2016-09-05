@@ -17,7 +17,9 @@
 							})
 						}
 						$scope.uploadAmendment = function(act) {
-							var aktic = act.akt.value.substr(-4)
+						
+							var aktic = act.akt.value.substr(53,act.akt.value.length)
+						
 							var file = document.getElementById('file').files[0];
 							console.log(file);
 							var fileReader = new FileReader();
