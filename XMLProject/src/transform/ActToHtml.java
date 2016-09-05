@@ -9,45 +9,36 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class ActToHtml {
-	public static final String ACT_RESOURCE = "./src/schema/akt_html.xsl";
-	public static final String TEST_ACT = "./src/xml/akti/Prcmilojka.xml";
-	public static final String HTML_FILE_TEST = "./src/html/Temp.html";
+public class ActToHtml extends TransformersXMLToHTML {
+	public static final String ACT_RESOURCE = "/home/student/git/XML2016Projekat3/XMLProject/src/schema/akt_html.xsl";
+	public static final String TEST_ACT = "/home/student/git/XML2016Projekat3/XMLProject/src/xml/akti/Akt1-donet.xml";
+	public static final String HTML_FILE_TEST = "/home/student/git/XML2016Projekat3/XMLProject/html/Temp.html";
 	
 	public ActToHtml() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	InputStream is;
 
-	public void test() throws FileNotFoundException {
-		InputStream is = new FileInputStream(new File(TEST_ACT)); 
-
-		if (is == null) {
-			System.out.println("NULLCINA");
-			return;
-		}
+	public void test() {
+		try {
+			is = new FileInputStream(new File(TEST_ACT));
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} 
 		
-		TransformersXMLToHTML txthtml = new TransformersXMLToHTML() {
-			
-			@Override
-			public void test() {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public InputStream loadXSL() throws Exception {
-				// TODO Auto-generated method stub
-				return null;
-			}
-		} ;
+
 		
 		OutputStream os = new ByteArrayOutputStream();
+			try {
+				transform(is, os);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+	
 		
-		try {
-			txthtml.transform(is, os);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 		
 		
 		File htmlFile = new File(HTML_FILE_TEST);
@@ -55,6 +46,7 @@ public class ActToHtml {
 		try {
 			FileOutputStream fos = new FileOutputStream(htmlFile);
 			fos.write(((ByteArrayOutputStream) os).toByteArray());
+			fos.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -67,8 +59,6 @@ public class ActToHtml {
 	public InputStream loadXSL() throws Exception {
 		InputStream is = new FileInputStream(new File(ACT_RESOURCE));
 
-		if (is == null)
-			throw new Exception("Nije pronadjen XSL fajl");
 
 		return is;
 	}
