@@ -154,9 +154,88 @@ public class AmendmentService {
 	}
 
 	@POST
-	@Path("/update")
-	public void changeStatus(String id) {
+	@Path("/update/{id}")
+	public void changeStatus(@PathParam("id") String id) throws IOException {
 		System.out.println("Amandman za prihvatanje : " + id);
+		
+		String DocQuery1 = "declare namespace sem=\"http://marklogic.com/semantics\";"+
+				"for $doc in fn:collection(\"/propisi/amandmani/u_porceduri/metadata\")"+
+				"where $doc/sem:triples/sem:triple[8]/sem:object = \""+ id +"\""+
+				"return base-uri($doc)";
+
+		String r1 = MyXQuery.invoke(DBConnection.loadProperties(), DocQuery1);
+		r1 = r1.replace("\n", "");
+		String remover1 = "xdmp:document-set-collections(\""+ r1 + "\""
+				+ ",(\"/propisi/amandmani/doneti/metadata\"))";
+		MyXQuery.invoke(DBConnection.loadProperties(), remover1);
+
+		String DocQuery2 = "declare namespace ns6=\"http://www.parlament.gov.rs/propisi/\";"+
+				"for $doc in fn:collection(\"/propisi/amandmani/u_proceduri\")"+
+				"where $doc/ns6:Amandman/ns6:Sporedni_deo/ns6:Meta_podaci/ns6:OznakaAmandmana = \""+ id +"\""+
+				"return base-uri($doc)";
+		System.out.println(DocQuery2);
+
+		String r2 = MyXQuery.invoke(DBConnection.loadProperties(), DocQuery2);
+		r2 = r2.replace("\n", "");
+		String remover2 = "xdmp:document-set-collections(\""+ r2 + "\""
+				+ ",(\"/propisi/amandmani/doneti/\"))";
+		MyXQuery.invoke(DBConnection.loadProperties(), remover2);
+
+	}
+	@POST
+	@Path("/allAccepted/{idAct}")
+	@Consumes(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_XML)
+	public void allAccepted(@PathParam("idAct")String idAct) throws IOException{
+		System.out.println("Amandman za prihvatanje : " + idAct);
+		
+		String DocQuery1 = "declare namespace sem=\"http://marklogic.com/semantics\";"+
+				"for $doc in fn:collection(\"/propisi/amandmani/u_porceduri/metadata\")"+
+				"where $doc/sem:triples/sem:triple[3]/sem:object = \""+ idAct +"\""+
+				"return base-uri($doc)";
+		
+		System.out.println("Amandman za prihvatanje : " + DocQuery1);
+
+		String r1 = MyXQuery.invoke(DBConnection.loadProperties(), DocQuery1);
+		r1 = r1.replace("\n", "");
+		String remover1 = "xdmp:document-set-collections(\""+ r1 + "\""
+				+ ",(\"/propisi/amandmani/doneti/metadata\"))";
+		MyXQuery.invoke(DBConnection.loadProperties(), remover1);
+
+		String DocQuery2 = "declare namespace ns6=\"http://www.parlament.gov.rs/propisi/\";"+
+				"for $doc in fn:collection(\"/propisi/amandmani/u_proceduri\")"+
+				"where $doc/ns6:Amandman/ns6:Sporedni_deo/ns6:Meta_podaci/ns6:Oznaka = \""+ idAct +"\""+
+				"return base-uri($doc)";
+		System.out.println(DocQuery2);
+
+		String r2 = MyXQuery.invoke(DBConnection.loadProperties(), DocQuery2);
+		r2 = r2.replace("\n", "");
+		String remover2 = "xdmp:document-set-collections(\""+ r2 + "\""
+				+ ",(\"/propisi/amandmani/doneti/\"))";
+		MyXQuery.invoke(DBConnection.loadProperties(), remover2);
+		
+		String DocQuery3 = "declare namespace sem=\"http://marklogic.com/semantics\";"+
+				"for $doc in fn:collection(\"/propisi/akti/u_porceduri/metadata\")"+
+				"where $doc/sem:triples/sem:triple[1]/sem:object = \""+ idAct +"\""+
+				"return base-uri($doc)";
+
+		String r3 = MyXQuery.invoke(DBConnection.loadProperties(), DocQuery3);
+		r3 = r3.replace("\n", "");
+		String remover3 = "xdmp:document-set-collections(\""+ r3 + "\""
+				+ ",(\"/propisi/akti/doneti/metadata\"))";
+		MyXQuery.invoke(DBConnection.loadProperties(), remover3);
+
+		String DocQuery4 = "declare namespace p=\"http://www.parlament.gov.rs/propisi/\";"+
+				"for $doc in fn:collection(\"/propisi/akti/u_proceduri\")"+
+				"where $doc/p:Akt/p:Sporedni_deo/p:Meta_podaci/p:Oznaka = \""+ idAct +"\""+
+				"return base-uri($doc)";
+		System.out.println(DocQuery4);
+
+		String r4 = MyXQuery.invoke(DBConnection.loadProperties(), DocQuery4);
+		r4 = r4.replace("\n", "");
+		String remover4 = "xdmp:document-set-collections(\""+ r4 + "\""
+				+ ",(\"/propisi/amandmani/doneti/\"))";
+		MyXQuery.invoke(DBConnection.loadProperties(), remover4);
 
 	}
 
