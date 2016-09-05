@@ -81,7 +81,7 @@ public class AmendmentService {
 		
 		String DocQuery1 = "declare namespace sem=\"http://marklogic.com/semantics\";"+
 							"for $doc in fn:collection(\"/propisi/amandmani/u_porceduri/metadata\")"+
-							"where $doc/sem:triples/sem:triple[3]/sem:object = \""+ amId +"\""+
+							"where $doc/sem:triples/sem:triple[8]/sem:object = \""+ amId +"\""+
 							"return base-uri($doc)";
 		
 		String r1 = MyXQuery.invoke(DBConnection.loadProperties(), DocQuery1);

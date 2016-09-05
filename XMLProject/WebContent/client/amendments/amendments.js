@@ -59,10 +59,10 @@
 						}
 
 						$scope.povuciAmandman = function(amId) {
-							console.log("Povlacim amandman "+ amId.oznaka.value);
-							Amendments.deleteAmendment({
+							console.log("Povlacim amandman "+ amId.oznakaAmandmana.value);
+							/*Amendments.deleteAmendment({
 								id : amId.oznaka.value
-							})
+							})*/
 							init();
 						}
 					})
