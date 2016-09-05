@@ -12,6 +12,7 @@
 		$scope.act = Acts.getActs();
 		$scope.act.$promise.then(function(data) {
 			$scope.$parent.acts = data.results.bindings;
+		
 		})
 		
 		}
@@ -45,6 +46,8 @@
 				act : act
 			});
 		}
+		
+		
 	}).controller('actsInProcedureCtrl', function($scope,$http, Acts) {
 		init();
 		

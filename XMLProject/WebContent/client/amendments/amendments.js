@@ -53,6 +53,7 @@
 								$scope.amendments = data.results.bindings;
 
 							})
+							
 						}
 
 						$scope.povuciAmandman = function(amId) {

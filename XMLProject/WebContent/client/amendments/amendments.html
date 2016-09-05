@@ -9,13 +9,13 @@
 				<th>Naziv</th>
 				<tr ng-repeat="a in acts">
 						<td><a class="amandmani"
-						ng-click="actAmendments(a);nacelo = !nacelo;value= !value;">{{a.naziv.value}}</a>
-						<br/><br><ul ng-repeat="am in amendments" ng-show="nacelo">
+						ng-click="actAmendments(a);value= !value;">{{a.naziv.value}}</a>
+						<br/><br><ul ng-repeat="am in amendments" ng-show="value">
 							<li><u>{{am.naziv.value}}
 									<button class="btn btn-danger btn-xs" ng-click="povuciAmandman(am)">Povuci amandman</button>
 							</u></li>
 						</ul>
-						<div style="width: 50%;" class="form-group" ng-show="value">
+						<div style="width: 50%;" class="form-group" ng-if="a.oznaka.value==am.oznaka.value">
 							<br> <br>
 							<div style="border-style: solid;">
 								<h3>Predlozi amandman</h3>

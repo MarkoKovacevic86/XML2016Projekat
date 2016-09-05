@@ -48,6 +48,13 @@ public class AmendmentService {
 				System.out.println(id);
 				return r;
 	}
+	
+	@GET
+	@Path("/getAcceptedAmendments/{id}")
+	public String getAcceptedAmendments(@PathParam("id") String id) throws IOException {
+		
+		return null;
+	}
 
 	@DELETE
 	@Path("/deleteAmendment/{id}")
