@@ -20,6 +20,7 @@ import org.xml.sax.SAXException;
 
 import jaxB.akt.Akt;
 import sparql.MySparqlQuery;
+import sparql.MyXQuery;
 import xmlUtil.RDFtoTriples;
 import xmlUtil.xmlCheck;
 import xmlUtil.xmlToMlDb;
@@ -68,9 +69,19 @@ public class ActService {
 
 	@DELETE
 	@Path("/deleteAct/{id}")
-	public void removeAct(@PathParam("id") String id) {
+	public void removeAct(@PathParam("id") String id) throws IOException {
 		System.out.println("Usao u brisanje akt");
 		System.out.println(id);
+		
+		String DocQuery1 = "declare namespace sem=\"http://marklogic.com/semantics\";"+
+				"for $doc in fn:collection(\"/propisi/akti/u_porceduri/metadata\")"+
+				"where $doc/sem:triples/sem:triple[1]/sem:object = \""+ id +"\""+
+				"return base-uri($doc)";
+
+		String r1 = MyXQuery.invoke(DBConnection.loadProperties(), DocQuery1);
+		r1 = r1.replace("\n", "");
+		String remover1 = "xdmp:document-delete(\""+ r1 + "\")";
+		MyXQuery.invoke(DBConnection.loadProperties(), remover1);
 
 	}
 
