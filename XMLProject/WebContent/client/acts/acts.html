@@ -15,11 +15,17 @@
 					<td><input type="text" ng-model="srch.naziv.value"
 						class="form-control" style="margin-top: 10px; margin-left: 10px;" /></td>
 				</tr>
+				
+					<tr>
+					<td>Vrsta:</td>
+					<td><input type="text" ng-model="srch.vrsta.value"
+						class="form-control" style="margin-top: 10px; margin-left: 10px;" /></td>
+				</tr>
 
 				<tr>
 					<td colspan="2" style="text-align: center;"><button
-							ng-click="search()" class="btn btn-success"
-							style="margin-top: 10px;">Pretraga</button></td>
+							ng-click="srch={}" class="btn btn-success"
+							style="margin-top: 10px;">Resetuj pretragu</button></td>
 				</tr>
 			</table>
 
@@ -31,13 +37,10 @@
 					<th>Vrsta</th>
 				</tr>
 				<tr ng-repeat="act in acts | filter:srch">
-<!-- 					<td width="60%">{{act.naziv.value}}</td>
- -->					<td width="60%"><a class="amandmani" ng-click="show = !show">{{act.naziv.value}}
-							{{act.datum.value}}</a>
-							<ul ng-repeat="act in acts" ng-show="nacelo">
-							<li><u>{{act.naziv.value}}</u> : Za <input type="number" min="0" max="1000"> &nbsp; / &nbsp; 
-							Protiv <input type="number" min="0" max="1000"> <button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
-							</button></li>
+					<td width="60%"><a class="amandmani" ng-click="show = !show">{{act.naziv.value}}</a>
+					<br/><br>
+							<ul ng-repeat="act in acts" ng-show="show">
+							<li><u>{{act.naziv.value}}</u></li>
 						</ul></td>
 					<td>{{act.datum.value}}</td>
 					<td>{{act.vrsta.value}}</td>
