@@ -63,6 +63,7 @@
 							Amendments.deleteAmendment({
 								id : amId.oznaka.value
 							})
+							init();
 						}
 					})
 

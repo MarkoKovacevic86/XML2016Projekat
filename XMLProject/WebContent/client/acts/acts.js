@@ -85,6 +85,7 @@
 		$scope.povuciAkt = function(akt){
 			console.log("Povlacim akt u proceduri " + akt.oznaka.value )
 			Acts.deleteAct({id : akt.oznaka.value})
+			init();
 		}
 	
 		
