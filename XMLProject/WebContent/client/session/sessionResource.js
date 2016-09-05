@@ -8,9 +8,10 @@
 								'/session',
 								{},
 								{
-									vote : {
+									voteFor : {
 										method : 'POST',
-										url : 'http://localhost:8081/XMLProject/rest/session/vote'
+										url : 'http://localhost:8081/XMLProject/rest/amendments/voteFor/:id',
+										id : '@id'
 									}
 								})
 

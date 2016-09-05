@@ -34,8 +34,8 @@
 									},
 									update : {
 										method : 'POST',
-										url : 'http://localhost:8081/XMLProject/rest/amendments/update/:status',
-										status : '@status'
+										url : 'http://localhost:8081/XMLProject/rest/amendments/update/:id',
+										id : '@id'
 									}
 
 								})

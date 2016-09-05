@@ -15,15 +15,26 @@
 				}
 				$scope.hide = false;
 				$scope.getActAmendments = function(act) {
-					$scope.amId = $scope.id ? ($scope.amId = null)	: act.oznaka.value;
+					$scope.amId = $scope.id ? ($scope.amId = null)
+							: act.oznaka.value;
 					$scope.acceptedAM = Amendments.actAmendments({
 						id : act.oznaka.value
 					});
 					$scope.acceptedAM.$promise.then(function(data) {
-						console.log("aloooo")
 						$scope.amendments = data.results.bindings;
 					})
 					$scope.hide = !$scope.hide;
+				}
+
+				$scope.voteForAmendment = function(za, protiv,am) {
+					if (za > protiv) {
+						console.log("Amandman prihvacen")
+						Amendments.update({id : am.oznaka.value});
+						init();
+					} else if (protiv > za) {
+						console.log("Amandman odbijen !")
+						Amendments.deleteAmendment({id : am.oznaka.value})
+					}
 				}
 
 			})
