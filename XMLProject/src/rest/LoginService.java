@@ -23,7 +23,7 @@ import uloge.User;
 @Path("/user")
 public class LoginService {
 	
-	private String path ="/home/student/Documents/RA140-2012/XML2016Projekat/XMLProject/src/users/users.txt";
+	private String path ="/home/student/git/XML2016Projekat3/XMLProject/src/users/users.txt";
 	//private String path	=  "C:\\Users\\Bebica\\git\\XML2016Projekat\\XMLProject\\src\\users\\users.txt";
     // private String path = "C:\\Users\\Strefa\\git\\XML2016Projekat\\XMLProject\\src\\users\\users.txt";
 

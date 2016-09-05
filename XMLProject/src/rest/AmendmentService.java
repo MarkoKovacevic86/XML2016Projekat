@@ -88,6 +88,16 @@ public class AmendmentService {
 		r1 = r1.replace("\n", "");
 		String remover1 = "xdmp:document-delete(\""+ r1 + "\")";
 		 MyXQuery.invoke(DBConnection.loadProperties(), remover1);
+		 
+		 String DocQuery2 = "declare namespace ns6=\"http://www.parlament.gov.rs/propisi\";"+
+							"for $doc in fn:collection(\"/propisi/amandmani/u_proceduri\")"+
+							"where $doc/ns6:Amandman/ns6:Sporedni_deo/ns6:Meta_podaci/ns6:Oznaka = \""+ amId +"\""+
+							"return base-uri($doc)";
+
+		 String r2 = MyXQuery.invoke(DBConnection.loadProperties(), DocQuery2);
+		 r2 = r2.replace("\n", "");
+		 String remover2 = "xdmp:document-delete(\""+ r2 + "\")";
+		 MyXQuery.invoke(DBConnection.loadProperties(), remover2);
 		
 		
 
@@ -143,11 +153,10 @@ public class AmendmentService {
 	}
 
 	@POST
-	@Path("/update/{status}")
-	@Consumes(MediaType.APPLICATION_XML)
-	@Produces(MediaType.APPLICATION_XML)
-	public Amandman changeStatus(Amandman amandman, @PathParam("status") String status) {
-		return null;
+	@Path("/update")
+	public void changeStatus(String id) {
+		System.out.println("Amandman za prihvatanje : " + id);
+
 	}
 
 }
