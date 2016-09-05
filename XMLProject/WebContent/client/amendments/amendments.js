@@ -17,16 +17,18 @@
 							})
 						}
 						$scope.uploadAmendment = function(act) {
+							var aktic = act.akt.value.substr(-4)
 							var file = document.getElementById('file').files[0];
 							console.log(file);
 							var fileReader = new FileReader();
 							fileReader.onloadend = function(e) {
 								console.log("Usao odje ???")
 								var data = e.target.result;
+								console.log(data)
 								$http(
 										{
 											method : "POST",
-											url : 'http://localhost:8081/XMLProject/rest/amendments/suggestAmendment',
+											url : 'http://localhost:8081/XMLProject/rest/amendments/suggestAmendment/'+aktic,
 											headers : {
 												"Content-Type" : "application/xml"
 											},

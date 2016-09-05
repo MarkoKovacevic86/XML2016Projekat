@@ -43,7 +43,7 @@ public class AmendmentService {
 	}
 
 	@POST
-	@Path("/suggestAmendment/{actId}")
+	@Path("/suggestAmendment/{aktId}")
 	@Consumes(MediaType.APPLICATION_XML)
 
 	public Response add(Amandman amandman,@PathParam("actId") String actId) throws FileNotFoundException, SAXException, JAXBException {
