@@ -12,6 +12,11 @@
 										method : 'POST',
 										url : 'http://localhost:8081/XMLProject/rest/amendments/voteFor/:id',
 										id : '@id'
+									},
+									allAccepted : {
+										method : 'POST',
+										url : 'http://localhost:8081/XMLProject/rest/amendments/all/:id',
+										id : '@id'
 									}
 								})
 

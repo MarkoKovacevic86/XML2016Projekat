@@ -1,7 +1,7 @@
 (function(angular) {
 	angular.module('session', []).controller(
 			'sessionCtrl',
-			function($scope, Acts, Amendments) {
+			function($scope, Acts, Amendments,$http) {
 
 				init();
 
@@ -29,15 +29,40 @@
 				$scope.voteForAmendment = function(za, protiv,am) {
 					if (za > protiv) {
 						var s = am.amandman.value.split("u_proceduri/")[1]
-						Amendments.update({id : s});
+						console.log('usao')
+						$http(
+								{
+									method : "POST",
+									url : 'http://localhost:8081/XMLProject/rest/amendments/update/' + s,
+									
+								}).success(function() {
+									init()
+						}).error(function() {
+							alert('XML dokument nije validan !')
+						})
 						init();
 					} else if (protiv > za) {
 						var s = am.amandman.value.split("u_proceduri/")[1]
-						Amendments.deleteAmendment({id : s})
+						Amendments.deleteAmendment({id : s},init)
 						init();
 					}
 				}
 				
+				$scope.usvajaSeSve = function(act){
+					
+					var s = act.akt.value.split("u_proceduri/")[1]
+					
+					$http(
+							{
+								method : "POST",
+								url : 'http://localhost:8081/XMLProject/rest/amendments/allAccepted/' + s,
+								
+							}).success(function() {
+								init()
+					}).error(function() {
+						alert('XML dokument nije validan !')
+					})
+				}
 
 			})
 
