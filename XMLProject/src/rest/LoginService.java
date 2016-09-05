@@ -23,7 +23,7 @@ import uloge.User;
 @Path("/user")
 public class LoginService {
 	
-	private String path ="/home/student/Documents/RA140-2012/XML2016Projekat/XMLProject/src/users/users.txt";
+	private String path ="/home/student/git/XML2016Projekat3/XMLProject/src/users/users.txt";
 	//private String path	=  "C:\\Users\\Bebica\\git\\XML2016Projekat\\XMLProject\\src\\users\\users.txt";
     // private String path = "C:\\Users\\Strefa\\git\\XML2016Projekat\\XMLProject\\src\\users\\users.txt";
 
@@ -31,7 +31,8 @@ public class LoginService {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public User log(String user){
-	
+		
+		
 		Genson genson = new GensonBuilder().useDateFormat(new SimpleDateFormat("yyyy-MM-dd")).create();
 		User u = genson.deserialize(user, User.class);
 		
