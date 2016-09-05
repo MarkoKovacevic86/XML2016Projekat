@@ -20,4 +20,7 @@
   <rdf:Description rdf:about="http://www.parlament.gov.rs/propisi/amandmani/u_proceduri/a1">
     <pred:naziv xmlns:pred="http://www.parlament.gov.rs/propisi/predicate/" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Predlog o doprinosu</pred:naziv>
   </rdf:Description>
+  <rdf:Description rdf:about="http://www.parlament.gov.rs/propisi/amandmani/u_proceduri/a1">
+    <pred:oznakaAmandmana xmlns:pred="http://www.parlament.gov.rs/propisi/predicate/" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a1</pred:oznakaAmandmana>
+  </rdf:Description>
 </rdf:RDF>

@@ -49,9 +49,9 @@ public class xmlToMlDb {
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		// Define a URI value for a document.
-		String inputFile = "./src/xml/akti/Prcmilojka.xml";
+		String inputFile = "./src/xml/akti/amandman1-donet.xml";
 		//String inputFile = "data/rdfa/RS26-16-lat_primer_donetog_akta1.xml";
-		String docId = "Prcmilojka.xml";	//document id
+		String docId = "amandman1-donet.xml";	//document id
 		String collId = "/propisi/akti/doneti";			//collection
 		xmlToMlDb(DBConnection.loadProperties(), inputFile, docId, collId, true);
 	}

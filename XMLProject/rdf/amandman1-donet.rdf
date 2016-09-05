@@ -20,4 +20,7 @@
   <rdf:Description rdf:about="http://www.parlament.gov.rs/propisi/amandmani/doneti/a2">
     <pred:naziv xmlns:pred="http://www.parlament.gov.rs/propisi/predicate/" rdf:datatype="string">Predlog o blejanju jace</pred:naziv>
   </rdf:Description>
+  <rdf:Description rdf:about="http://www.parlament.gov.rs/propisi/amandmani/doneti/a2">
+    <pred:oznakaAmandmana xmlns:pred="http://www.parlament.gov.rs/propisi/predicate/" rdf:datatype="string">a2</pred:oznakaAmandmana>
+  </rdf:Description>
 </rdf:RDF>

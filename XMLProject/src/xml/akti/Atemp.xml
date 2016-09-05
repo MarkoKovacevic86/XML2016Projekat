@@ -14,6 +14,7 @@
             <ns6:Datum datatype="xs:date" property="pred:datum">2016-01-31</ns6:Datum>
             <ns6:Vrsta datatype="xs:string" property="pred:vrsta">Predlog</ns6:Vrsta>
             <ns6:Naziv datatype="xs:string" property="pred:naziv">Predlog o doprinosu</ns6:Naziv>
+            <ns6:OznakaAmandmana datatype="xs:string" property="pred:oznakaAmandmana">a1</ns6:OznakaAmandmana>
         </ns6:Meta_podaci>
     </ns6:Sporedni_deo>
 </ns6:Amandman>
