@@ -8,18 +8,15 @@
 					<td><a class="amandmani" ng-click="show = !show">{{act.naziv.value}}
 							{{act.datum.value}}</a>
 						<ul ng-repeat="act in acts" ng-show="nacelo">
-							<li><u>{{act.naziv.value}}</u> : Za <input type="number" min="0" max="1000"> &nbsp; / &nbsp; 
-							Protiv <input type="number" min="0" max="1000"> <button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
-							</button></li>
+							<li><u>{{act.naziv.value}}</u> : Za <input ng-model="za" type="number" min="0" max="1000"> &nbsp; / &nbsp; 
+							Protiv <input ng-model="protiv" type="number" min="0" max="1000"> 
+							<button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+							</button>
+							</li>
 						</ul>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-success" ng-show="nacelo">Usvaja se u celini</button>
 						</td>
 					<td>
-						<!-- <div> glyphicon glyphicon-folder-close
-						
-							<button class="btn btn-info" ng-click="show = !show">Usvoji
-								u celosti</button>
-						</div> -->
 						Usvaja se u nacelu<br>
 						<label><input type="radio" ng-model="nacelo" ng-value=true>Da</label>
 						<label><input type="radio" ng-model="nacelo" ng-value=false>Ne</label>
