@@ -28,6 +28,7 @@
 						}
 						$scope.uploadAmendment = function(act,index) {
 							console.log(act);
+							console.log(index)
 							var aktic = act.akt.value.substr(53,act.akt.value.length)
 						
 							var file = document.getElementById(act.naziv.value).files[0];
