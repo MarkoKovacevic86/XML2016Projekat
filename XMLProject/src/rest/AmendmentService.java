@@ -19,6 +19,7 @@ import org.xml.sax.SAXException;
 
 import jaxB.amandman.Amandman;
 import sparql.MySparqlQuery;
+import sparql.MyXQuery;
 import xmlUtil.xmlCheck;
 import xmlUtil.xmlToMlDb;
 import xmldb.DBConnection;
@@ -74,9 +75,21 @@ public class AmendmentService {
 
 	@DELETE
 	@Path("/deleteAmendment/{id}")
-	public void removeAmendment(@PathParam("id") String amId) {
+	public void removeAmendment(Amandman amandman,@PathParam("id") String amId) throws IOException {
 		System.out.println("Usao u brisanje amandmana");
 		System.out.println(amId);
+		
+		String DocQuery1 = "declare namespace sem=\"http://marklogic.com/semantics\";"+
+							"for $doc in fn:collection(\"/propisi/amandmani/u_porceduri/metadata\")"+
+							"where $doc/sem:triples/sem:triple[3]/sem:object = \""+ amId +"\""+
+							"return base-uri($doc)";
+		
+		String r1 = MyXQuery.invoke(DBConnection.loadProperties(), DocQuery1);
+		r1 = r1.replace("\n", "");
+		String remover1 = "xdmp:document-delete(\""+ r1 + "\")";
+		 MyXQuery.invoke(DBConnection.loadProperties(), remover1);
+		
+		
 
 	}
 
