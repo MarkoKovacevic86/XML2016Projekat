@@ -1,17 +1,29 @@
 (function(angular) {
-	angular.module('session', []).controller('sessionCtrl',
+	angular.module('session', []).controller(
+			'sessionCtrl',
 			function($scope, Acts, Amendments) {
-				
+
 				init();
-				$scope.za = 0;
-				$scope.protiv = 5;
+
 				function init() {
-
-					$scope.getActs = Acts.getActs();
-					$scope.getActs.$promise.then(function(data) {
-						$scope.$parent.acts = data.results.bindings;
+					$scope.actIP = Acts.getActsInProcedure();
+					$scope.actIP.$promise.then(function(data) {
+						console.log('aktovi u proceduri')
+						$scope.actsInProcedure = data.results.bindings;
+						console.log(JSON.stringify($scope.actsInProcedure));
 					})
-
+				}
+				$scope.hide = false;
+				$scope.getActAmendments = function(act) {
+					$scope.amId = $scope.id ? ($scope.amId = null)	: act.oznaka.value;
+					$scope.acceptedAM = Amendments.actAmendments({
+						id : act.oznaka.value
+					});
+					$scope.acceptedAM.$promise.then(function(data) {
+						console.log("aloooo")
+						$scope.amendments = data.results.bindings;
+					})
+					$scope.hide = !$scope.hide;
 				}
 
 			})
