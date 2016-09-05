@@ -91,7 +91,7 @@ public class AmendmentService {
 		 
 		 String DocQuery2 = "declare namespace ns6=\"http://www.parlament.gov.rs/propisi\";"+
 							"for $doc in fn:collection(\"/propisi/amandmani/u_proceduri\")"+
-							"where $doc/ns6:Amandman/ns6:Sporedni_deo/ns6:Meta_podaci/ns6:Oznaka = \""+ amId +"\""+
+							"where $doc/ns6:Amandman/ns6:Sporedni_deo/ns6:Meta_podaci/ns6:OznakaAmandmana = \""+ amId +"\""+
 							"return base-uri($doc)";
 
 		 String r2 = MyXQuery.invoke(DBConnection.loadProperties(), DocQuery2);
