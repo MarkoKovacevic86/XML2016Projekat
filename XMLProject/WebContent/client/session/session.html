@@ -4,23 +4,20 @@
 		<br> <br>
 		<div class="container">
 			<table class="table">
-				<tr ng-repeat="act in acts">
-					<td><a class="amandmani" ng-click="show = !show">{{act.naziv.value}}
+				<tr ng-repeat="act in actsInProcedure">
+					<td><a class="amandmani" ng-click="getActAmendments(act)">{{act.naziv.value}}
 							{{act.datum.value}}</a>
-						<ul ng-repeat="act in acts" ng-show="nacelo">
-							<li><u>{{act.naziv.value}}</u> : Za <input ng-model="za" type="number" min="0" max="1000"> &nbsp; / &nbsp; 
+						<div ng-show="amId==act.oznaka.value && hide">
+						<ul ng-repeat="am in amendments">
+							<li><u>{{am.naziv.value}}</u> : Za <input ng-model="za" type="number" min="0" max="1000"> &nbsp; / &nbsp; 
 							Protiv <input ng-model="protiv" type="number" min="0" max="1000"> 
 							<button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
 							</button>
 							</li>
 						</ul>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-success" ng-show="nacelo">Usvaja se u celini</button>
+						</div>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-success">Usvaja se u celini</button>
 						</td>
-					<td>
-						Usvaja se u nacelu<br>
-						<label><input type="radio" ng-model="nacelo" ng-value=true>Da</label>
-						<label><input type="radio" ng-model="nacelo" ng-value=false>Ne</label>
-					</td>
 				</tr>
 			</table>
 		</div>
