@@ -121,7 +121,7 @@ public class AmendmentService {
 		//create temp file
 		String path = xmlCheck.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 		path = path.substring(1, path.length());
-		String xmlPath = "/home/student/git/XML2016Projekat3/XMLProject/src/xml/akti/Atemp.xml";
+		String xmlPath = "C:\\Users\\Mihajlo\\git\\XML2016Projekat3\\XMLProject\\src\\xml\\akti\\Atemp.xml";
 				
 				//check validity
 		System.out.println("Dosa do ovde");
@@ -139,9 +139,9 @@ public class AmendmentService {
 				
 
 				// create metadata
-				String grddlPath = "/home/student/git/XML2016Projekat3/XMLProject/src/grddl.xsl";
+				String grddlPath = "C:\\Users\\Mihajlo\\git\\XML2016Projekat3\\XMLProject\\src\\grddl.xsl";
 				String sparqlNamedGraph = "/propisi/amandmani/u_porceduri/metadata";
-				String rdfFilePath = "/home/student/git/XML2016Projekat3/XMLProject/rdf/Atemp.rdf";
+				String rdfFilePath = "C:\\Users\\Mihajlo\\git\\XML2016Projekat3\\XMLProject\\rdf\\Atemp.rdf";
 				xmlUtil.RDFtoTriples.convert(DBConnection.loadProperties(), xmlPath, rdfFilePath, sparqlNamedGraph, grddlPath);
 
 			} catch (IOException | SAXException | TransformerException e) {
@@ -225,16 +225,16 @@ public class AmendmentService {
 				+ ",(\"/propisi/akti/doneti/metadata\"))";
 		MyXQuery.invoke(DBConnection.loadProperties(), remover3);
 
-		String DocQuery4 = "declare namespace p=\"http://www.parlament.gov.rs/propisi/\";"+
+		String DocQuery4 = "declare namespace p=\"http://www.parlament.gov.rs/propisi\";"+
 				"for $doc in fn:collection(\"/propisi/akti/u_proceduri\")"+
-				"where $doc/p:Akt/p:Sporedni_deo/p:Meta_podaci/p:Oznaka = \""+ idAct +"\""+
+				"where $doc/p:Akt/p:Sporedni_deo/p:Akt_u_proceduri/p:Meta_podaci/p:Oznaka = \""+ idAct +"\""+
 				"return base-uri($doc)";
 		System.out.println(DocQuery4);
 
 		String r4 = MyXQuery.invoke(DBConnection.loadProperties(), DocQuery4);
 		r4 = r4.replace("\n", "");
 		String remover4 = "xdmp:document-set-collections(\""+ r4 + "\""
-				+ ",(\"/propisi/amandmani/doneti/\"))";
+				+ ",(\"/propisi/akti/doneti/\"))";
 		MyXQuery.invoke(DBConnection.loadProperties(), remover4);
 
 	}
