@@ -18,7 +18,7 @@ import javax.xml.transform.TransformerException;
 import org.xml.sax.SAXException;
 
 import jaxB.amandman.Amandman;
-
+import sparql.MySparqlQuery;
 import xmlUtil.xmlCheck;
 import xmlUtil.xmlToMlDb;
 import xmldb.DBConnection;
@@ -28,10 +28,25 @@ public class AmendmentService {
 
 	@GET
 	@Path("/actAmendments/{id}")
-	public String getAmendments(@PathParam("id") String id) {
+	public String getAmendments(@PathParam("id") String id) throws IOException {
 		System.out.println("Usao u amandman");
 		System.out.println(id);
-		return id;
+		
+		
+		String upit = "SELECT * FROM </propisi/amandmani/u_proceduri/metadata> {"+
+				   " ?amandman <http://www.parlament.gov.rs/propisi/predicate/belongsTo> ?akt ."+
+				    "{"+
+				     "   SELECT * {"+
+				      "      ?amandman <http://www.parlament.gov.rs/propisi/predicate/oznaka> ?oznaka ."+
+				       "     ?amandman <http://www.parlament.gov.rs/propisi/predicate/naziv> ?naziv ."+
+				        "}"+
+				     "}"+
+				    "FILTER ( str(?akt) = \"http://www.parlament.gov.rs/propisi/akti/u_proceduri/" + id + "\")"+
+				"}";
+				String r = MySparqlQuery.executeFromString(DBConnection.loadProperties(), upit);
+		
+				System.out.println(id);
+				return r;
 	}
 
 	@DELETE

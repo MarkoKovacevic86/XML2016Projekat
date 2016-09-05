@@ -21,6 +21,8 @@
 								console.log(JSON.stringify(data.results));
 								$scope.$parent.amendments = data.results.bindings;
 							})
+
+
 						
 							
 						}
@@ -44,13 +46,15 @@
 											},
 											data : data
 										}).success(function() {
-									init();
+									
 								}).error(function() {
 									alert('XML dokument nije validan !')
 								})
 
 							}
 							fileReader.readAsBinaryString(file);
+							$state.go('amendments')
+							
 						}
 
 						$scope.actAmendments = function(act) {
