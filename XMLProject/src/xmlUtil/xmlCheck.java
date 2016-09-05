@@ -54,7 +54,7 @@ public class xmlCheck {
 		SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 			
 
-			StreamSource schemaAmandman = new StreamSource(getClass().getResourceAsStream("/resources/amandman.xsd"));
+			StreamSource schemaAmandman = new StreamSource(getClass().getResourceAsStream("/schema/amandman.xsd"));
 			
 
 			
