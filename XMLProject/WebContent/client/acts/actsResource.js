@@ -18,7 +18,7 @@
 									},
 									deleteAct : {
 										method : 'DELETE',
-										url : 'acts/deleteAct/:id',
+										url : 'http://localhost:8081/XMLProject/rest/acts/deleteAct/:id',
 										id : '@id'
 									},
 									getById : {
@@ -30,7 +30,7 @@
 									addAct : {
 										method : 'POST',
 										url : 'http://localhost:8081/XMLProject/rest/acts/addAct/:act',
-										Akt : '@act',
+										act : '@act',
 										headers : {
 											"Content-Type": "application/xml"
 										}

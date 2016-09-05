@@ -66,6 +66,14 @@ public class ActService {
 		}
 	}
 
+	@DELETE
+	@Path("/deleteAct/{id}")
+	public void removeAct(@PathParam("id") String id) {
+		System.out.println("Usao u brisanje akt");
+		System.out.println(id);
+
+	}
+
 	@POST
 	@Path("/addAct")
 	@Produces(MediaType.APPLICATION_XML)
@@ -74,15 +82,13 @@ public class ActService {
 
 		ResponseBuilder response = Response.ok();
 		String about = akt.getSporedniDeo().getAbout().toString();
-		if(about.contains("doneti")){
+		if (about.contains("doneti")) {
 			return response.status(400).build();
 		}
-		//create temp file
-				String path = xmlCheck.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-				path = path.substring(1, path.length());
-				String xmlPath = "/home/student/git/XML2016Projekat3/XMLProject/src/xml/akti/temp.xml";
-
-
+		// create temp file
+		String path = xmlCheck.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+		path = path.substring(1, path.length());
+		String xmlPath = "/home/student/git/XML2016Projekat3/XMLProject/src/xml/akti/temp.xml";
 
 		System.out.println("Dosa do ovde");
 		// check validity
@@ -124,12 +130,4 @@ public class ActService {
 		return r;
 	}
 
-	@DELETE
-	@Path("/deleteAct/{id}")
-	@Consumes("application/json")
-	public void removeAmendment(@PathParam("id") String Actid) {
-		System.out.println("Usao u brisanje akt");
-		System.out.println(Actid);
-
-	}
 }
