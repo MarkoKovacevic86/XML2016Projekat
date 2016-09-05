@@ -40,8 +40,8 @@ import javax.xml.namespace.QName;
 @XmlType(name = "", propOrder = {
     "value"
 })
-@XmlRootElement(name = "Oznaka")
-public class Oznaka {
+@XmlRootElement(name = "OznakaAmandmana")
+public class OznakaAmandmana {
 
     @XmlValue
     protected String value;

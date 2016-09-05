@@ -88,6 +88,16 @@ public class AmendmentService {
 		r1 = r1.replace("\n", "");
 		String remover1 = "xdmp:document-delete(\""+ r1 + "\")";
 		 MyXQuery.invoke(DBConnection.loadProperties(), remover1);
+		 
+		 String DocQuery2 = "declare namespace ns6=\"http://www.parlament.gov.rs/propisi\";"+
+							"for $doc in fn:collection(\"/propisi/amandmani/u_proceduri\")"+
+							"where $doc/ns6:Amandman/ns6:Sporedni_deo/ns6:Meta_podaci/ns6:Oznaka = \""+ amId +"\""+
+							"return base-uri($doc)";
+
+		 String r2 = MyXQuery.invoke(DBConnection.loadProperties(), DocQuery2);
+		 r2 = r2.replace("\n", "");
+		 String remover2 = "xdmp:document-delete(\""+ r2 + "\")";
+		 MyXQuery.invoke(DBConnection.loadProperties(), remover2);
 		
 		
 
