@@ -143,11 +143,10 @@ public class AmendmentService {
 	}
 
 	@POST
-	@Path("/update/{status}")
-	@Consumes(MediaType.APPLICATION_XML)
-	@Produces(MediaType.APPLICATION_XML)
-	public Amandman changeStatus(Amandman amandman, @PathParam("status") String status) {
-		return null;
+	@Path("/update")
+	public void changeStatus(String id) {
+		System.out.println("Amandman za prihvatanje : " + id);
+
 	}
 
 }
