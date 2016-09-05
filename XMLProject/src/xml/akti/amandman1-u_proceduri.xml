@@ -24,6 +24,7 @@ xsi:schemaLocation="http://www.parlament.gov.rs/propisi/ ../../schema/amandman.x
       <p:Datum property="pred:datum" datatype="xs:date">2016-01-31</p:Datum>
       <p:Vrsta property="pred:vrsta" datatype="xs:string">Predlog</p:Vrsta>
       <p:Naziv property="pred:naziv" datatype="xs:string">Predlog o doprinosu</p:Naziv>
+      <p:OznakaAmandmana property="pred:oznakaAmandmana" datatype="xs:string">a1</p:OznakaAmandmana>
     </p:Meta_podaci>
   </p:Sporedni_deo>
 </p:Amandman>

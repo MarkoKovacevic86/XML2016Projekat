@@ -399,13 +399,11 @@
             <xs:anyAttribute/>
         </xs:complexType>
     </xs:element>
-
-
     <xs:element name="OznakaAmandmana">
         <xs:complexType>
             <xs:simpleContent>
                 <xs:extension base="xs:string">
-                    <xs:anyAttribute namespace="##any"/>
+                    <xs:anyAttribute namespace="##any" processContents="lax"/>
                 </xs:extension>
             </xs:simpleContent>
         </xs:complexType>

@@ -20,11 +20,11 @@ xsi:schemaLocation="http://www.parlament.gov.rs/propisi/ ../../schema/amandman.x
       <p:BrPozitivnihGlasova property="pred:brPozitivnihGlasova" datatype="xs:int">7</p:BrPozitivnihGlasova>
       <p:BrUkupnihGlasova>0</p:BrUkupnihGlasova>
       <p:Oznaka property="pred:oznaka" datatype="xs:string">doc1</p:Oznaka>
-      <p:OznakaAmandmana property="pred:oznakaamandmana" datatype="xs:string">a2</p:OznakaAmandmana>
       <p:Mesto property="pred:mesto" datatype="xs:string">Novi Sad</p:Mesto>
       <p:Datum property="pred:datum" datatype="xs:date">2015-04-30</p:Datum>
       <p:Vrsta property="pred:vrsta" datatype="xs:string">Predlog</p:Vrsta>
       <p:Naziv property="pred:naziv" datatype="xs:string">Predlog o blejanju jace</p:Naziv>
+      <p:OznakaAmandmana property="pred:oznakaAmandmana" datatype="xs:string">a2</p:OznakaAmandmana>
     </p:Meta_podaci>
   </p:Sporedni_deo>
 </p:Amandman>
