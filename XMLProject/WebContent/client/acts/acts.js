@@ -2,7 +2,7 @@
 
 	angular.module('acts', [ 'actsResource' ])
 
-	.controller('actsCtrl', function($scope,$http, Acts) {
+	.controller('actsCtrl', function($scope,$state,$http,Amendments, Acts) {
 
 		$scope.act = {};
 		
@@ -12,7 +12,16 @@
 		$scope.act = Acts.getActs();
 		$scope.act.$promise.then(function(data) {
 			$scope.$parent.acts = data.results.bindings;
+		
 		})
+		
+		$scope.getAcceptedAmendments = function(act){
+			$scope.acceptedAM = Amendments.getAcceptedAmendments({id : act.oznaka.value});
+			$scope.acceptedAM.$promise.then(function(data){
+				$scope.amendments = data.results.bindings;
+			})
+		}
+		
 		
 		}
 		$scope.uploadAct = function() {
@@ -38,14 +47,7 @@
 			fileReader.readAsBinaryString(file);
 		}
 
-		$scope.addAct = function() {
-			console.log('kova')
-			console.log(act)
-			Acts.addAct({
-				act : act
-			});
-		}
-	}).controller('actsInProcedureCtrl', function($scope,$http, Acts) {
+	}).controller('actsInProcedureCtrl', function($scope,$state,$http, Acts) {
 		init();
 		
 		function init() {
@@ -77,11 +79,12 @@
 				})
 			}
 			fileReader.readAsBinaryString(file);
+			$state.go('actsInProcedure')
 		}
 		
 		$scope.povuciAkt = function(akt){
+			console.log("Povlacim akt u proceduri " + akt.oznaka.value )
 			Acts.deleteAct({id : akt.oznaka.value})
-			init();
 		}
 	
 		

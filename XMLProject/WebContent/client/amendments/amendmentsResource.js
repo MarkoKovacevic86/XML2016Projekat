@@ -13,6 +13,11 @@
 										url : 'http://localhost:8081/XMLProject/rest/amendments/actAmendments/:id',
 										id : '@id'
 									},
+									getAcceptedAmendments : {
+										method: 'GET',
+										url : 'http://localhost:8081/XMLProject/rest/amendments/getAcceptedAmendments/:id',
+										id : '@id'
+									},
 									deleteAmendment : {
 										method : 'DELETE',
 										url : 'http://localhost:8081/XMLProject/rest/amendments/deleteAmendment/:id',
