@@ -35,18 +35,23 @@
 					<th>Naziv</th>
 					<th>Datum</th>
 					<th>Vrsta</th>
+					<th>&nbsp;</th>
 				</tr>
 				<tr ng-repeat="act in acts | filter:srch">
-					<td width="60%"><a class="amandmani" ng-click="getAcceptedAmendments(act);show = !show">{{act.naziv.value}}</a>
+					<td width="60%"><a class="amandmani" ng-click="getAcceptedAmendments(act,$index)" >{{act.naziv.value}}</a>
 					<br/><br>
-					<div ng-show="show">
-								<ul ng-repeat="am in amendments">
-							<li><u>{{am.naziv.value}}</u></li>
+					<div>
+								<ul ng-repeat="am in amendments[$index]">
+							<li><u>{{am.naziv.value}}</u>
+								<button class="btn btn-info btn-xs" ng-click="pdfAmendment(am)">PDF</button>
+							</li>
 						</ul>
 					</div>
 					</td>
 					<td>{{act.datum.value}}</td>
 					<td>{{act.vrsta.value}}</td>
+					<td><button class="btn btn-info" ng-click="pdf(act)">PDF</button></td>
+					
 				</tr>
 			</table>
 		</div>

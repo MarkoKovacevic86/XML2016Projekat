@@ -28,16 +28,8 @@
 
 									},
 									addAct : {
-										method : 'POST',
-										url : 'http://localhost:8081/XMLProject/rest/acts/addAct/:act',
-										act : '@act',
-										headers : {
-											"Content-Type": "application/xml"
-										}
-									},
-									isArray : false,
-									headers : {
-										"Content-Type" : "application/xml"
+										method : 'http://localhost:8081/XMLProject/rest/acts/addActOnly/:actId',
+										actId : '@actId'
 									}
 								})
 						return Acts;

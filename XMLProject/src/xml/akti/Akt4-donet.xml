@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<p:Akt xmlns:p="http://www.parlament.gov.rs/propisi" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.parlament.gov.rs/propisi ../../schema/akt.xsd ">
+<p:Akt xmlns:p="http://www.parlament.gov.rs/propisi" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns="http://www.w3.org/ns/rdfa#"
+xmlns:pred="http://www.parlament.gov.rs/propisi/predicate/"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.parlament.gov.rs/propisi ../../schema/akt.xsd ">
   <p:Glavni_deo/>
 <p:Sporedni_deo about="http://www.parlament.gov.rs/propisi/akti/doneti/doc4">
     <p:Donet_akt>

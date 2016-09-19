@@ -7,16 +7,16 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 xsi:schemaLocation="http://www.parlament.gov.rs/propisi ../../schema/akt.xsd ">
   <p:Glavni_deo/>
-<p:Sporedni_deo about="http://www.parlament.gov.rs/propisi/akti/u_proceduri/doc6">
+<p:Sporedni_deo about="http://www.parlament.gov.rs/propisi/akti/u_proceduri/doc7">
     <p:Akt_u_proceduri>
       <p:Predlagac>p:Predlagac</p:Predlagac>
       <p:Upucuje_se>p:Upucuje_se</p:Upucuje_se>
       <p:Meta_podaci>
-        <p:Oznaka property="pred:oznaka" datatype="xs:string">doc6</p:Oznaka>
-        <p:Mesto property="pred:mesto" datatype="xs:string">Beograd</p:Mesto>
-        <p:Datum property="pred:datum" datatype="xs:date">2014-05-12</p:Datum>
+        <p:Oznaka property="pred:oznaka" datatype="xs:string">doc7</p:Oznaka>
+        <p:Mesto property="pred:mesto" datatype="xs:string">Novi Sad</p:Mesto>
+        <p:Datum property="pred:datum" datatype="xs:date">2011-03-15</p:Datum>
         <p:Vrsta property="pred:vrsta" datatype="xs:string">Zakon</p:Vrsta>
-        <p:Naziv property="pred:naziv" datatype="xs:string">Akt za vise novaca </p:Naziv>
+        <p:Naziv property="pred:naziv" datatype="xs:string">Akt o zavrsetku studija</p:Naziv>
         <p:BrUkupnihGlasova>0</p:BrUkupnihGlasova>
         <p:BrPozitivnihGlasova>0</p:BrPozitivnihGlasova>
       </p:Meta_podaci>

@@ -1,13 +1,13 @@
 package transform;
 
-import java.io.BufferedOutputStream;
-import java.io.ByteArrayOutputStream;
+
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+
+import javax.xml.transform.TransformerFactory;
 
 import org.apache.fop.apps.FopFactory;
 import org.xml.sax.SAXException;
@@ -16,9 +16,7 @@ import net.sf.saxon.TransformerFactoryImpl;
 
 public class ActToPdf extends TransformersXMLtoPdf {
 
-	public static final String PDF_FILE_TEST = "/home/student/git/XML2016Projekat/XMLProject/html/tempPdf.pdf";
-	public static final String ACT_RESOURCE = "/home/student/git/XML2016Projekat/XMLProject/src/schema/aktPdf.xsl";
-	public static final String TEST_ACT = "/home/student/git/XML2016Projekat/XMLProject/src/xml/akti/Akt1-donet.xml";
+	public static final String ACT_RESOURCE = "C:\\Users\\Strefa\\git\\XML2016Projekat\\XMLProject\\src\\xml\\akti\\aktPdf.xsl";
 
 	public ActToPdf(String pathToConf) throws SAXException, IOException {
 		// Initialize FOP factory object
@@ -29,8 +27,7 @@ public class ActToPdf extends TransformersXMLtoPdf {
 	}
 
 	@Override
-	public void transform(InputStream input, OutputStream output)
-			throws Exception {
+	public void transform(InputStream input, OutputStream output) throws Exception {
 
 		super.transform(input, output);
 
@@ -39,45 +36,19 @@ public class ActToPdf extends TransformersXMLtoPdf {
 	@Override
 	public InputStream loadXSL() throws Exception {
 
-		InputStream is = getClass().getResourceAsStream(ACT_RESOURCE);
+		InputStream in = new FileInputStream(ACT_RESOURCE);
 
-		if (is == null)
+		if (in == null)
 			throw new Exception("Nije pronadjen XSL fajl");
 
-		return is;
+		return in;
 
 	}
 
+	@Override
 	public void test() {
-		InputStream is = getClass().getResourceAsStream(TEST_ACT);
-
-		if (is == null) {
-			System.out.println("NULLCINA");
-			return;
-		}
-
-		OutputStream os = new ByteArrayOutputStream();
-
-		try {
-			transform(is, os);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		// WRITE TO PDF
-
-		File pdfFile = new File(PDF_FILE_TEST);
-
-		try {
-			OutputStream out = new BufferedOutputStream(
-					new FileOutputStream(pdfFile));
-			out.write(((ByteArrayOutputStream) os).toByteArray());
-			out.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		// TODO Auto-generated method stub
 
 	}
-	
+
 }

@@ -1,16 +1,75 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<p:Akt xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/ns/rdfa#" xmlns:xs="http://www.w3.org/2001/XMLSchema#" xmlns:p="http://www.parlament.gov.rs/propisi" xmlns:pred="http://www.parlament.gov.rs/propisi/predicate/">
-    <p:Glavni_deo/>
+<p:Akt xmlns="http://www.w3.org/ns/rdfa#" xmlns:xs="http://www.w3.org/2001/XMLSchema#" xmlns:p="http://www.parlament.gov.rs/propisi" xmlns:pred="http://www.parlament.gov.rs/propisi/predicate/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <p:Glavni_deo>
+        <p:Odeljak oznaka="od1" naziv="Odeljak1" opis="Neki opis odeljka">
+            <p:Sadrzaj>Nebih bas znao sta da pisem u odeljku sem da kopiram sa neta ali evo malo duzi
+      tekst cisto da se vidi kako ce izgledati u pdf-u jedan odeljak. Nije bas da sam pisme ali
+      mislim da ovo i nece biti tako lose.</p:Sadrzaj>
+            <p:status>
+                <p:ref></p:ref>
+                <p:status_izmene>donet</p:status_izmene>
+            </p:status>
+        </p:Odeljak>
+        <p:Clan oznaka="cl1" naziv="Clan1" opis="Neki opis clana">
+            <p:Sadrzaj>Ovaj clan se odnosi na to da ja i dalje neznam o cemu da pisem</p:Sadrzaj>
+            <p:status>
+                <p:ref></p:ref>
+                <p:status_izmene>donet</p:status_izmene>
+            </p:status>
+        </p:Clan>
+        <p:Stav oznaka="st1" naziv="Stav1" opis="Neki opis stava">
+            <p:Sadrzaj>Jutro je jutro je to je moj stav</p:Sadrzaj>
+            <p:status>
+                <p:ref></p:ref>
+                <p:status_izmene>donet</p:status_izmene>
+            </p:status>
+        </p:Stav>
+        <p:Tacka oznaka="ta1" naziv="Tacka1" opis="Neki opis tacke">
+            <p:Sadrzaj>Al ovi aktovi imaju puno stavki</p:Sadrzaj>
+            <p:status>
+                <p:ref></p:ref>
+                <p:status_izmene>donet</p:status_izmene>
+            </p:status>
+        </p:Tacka>
+        <p:Podtacka oznaka="po1" naziv="Podtacka1" opis="Neki opis podtacke">
+            <p:Sadrzaj/>
+            <p:status>
+                <p:ref></p:ref>
+                <p:status_izmene>donet</p:status_izmene>
+            </p:status>
+        </p:Podtacka>
+        <p:Alineja oznaka="" naziv="" opis="">
+            <p:Sadrzaj>p:Sadrzaj</p:Sadrzaj>
+            <p:status>
+                <p:ref></p:ref>
+                <p:status_izmene>donet</p:status_izmene>
+            </p:status>
+        </p:Alineja>
+        <p:Glava oznaka="gl1" naziv="Glava1" opis="Neki opis glave">
+            <p:Sadrzaj>Mali opis za neku glavu</p:Sadrzaj>
+            <p:status>
+                <p:ref></p:ref>
+                <p:status_izmene>donet</p:status_izmene>
+            </p:status>
+        </p:Glava>
+        <p:Deo oznaka="de1" naziv="Deo1" opis="Neki opis dela">
+            <p:Sadrzaj/>
+            <p:status>
+                <p:ref>p:ref</p:ref>
+                <p:status_izmene>donet</p:status_izmene>
+            </p:status>
+        </p:Deo>
+    </p:Glavni_deo>
     <p:Sporedni_deo about="http://www.parlament.gov.rs/propisi/akti/u_proceduri/doc6">
         <p:Akt_u_proceduri>
             <p:Predlagac>p:Predlagac</p:Predlagac>
             <p:Upucuje_se>p:Upucuje_se</p:Upucuje_se>
             <p:Meta_podaci>
-                <p:Oznaka datatype="xs:string" property="pred:oznaka">doc6</p:Oznaka>
-                <p:Mesto datatype="xs:string" property="pred:mesto">Beograd</p:Mesto>
-                <p:Datum datatype="xs:date" property="pred:datum">2013-08-05</p:Datum>
-                <p:Vrsta datatype="xs:string" property="pred:vrsta">Odluka</p:Vrsta>
-                <p:Naziv datatype="xs:string" property="pred:naziv">Akt o kaznjavanju koljaca koji ne placaju obrezivanje</p:Naziv>
+                <p:Oznaka property="pred:oznaka" datatype="xs:string">doc6</p:Oznaka>
+                <p:Mesto property="pred:mesto" datatype="xs:string">Beograd</p:Mesto>
+                <p:Datum property="pred:datum" datatype="xs:date">2014-05-12</p:Datum>
+                <p:Vrsta property="pred:vrsta" datatype="xs:string">Zakon</p:Vrsta>
+                <p:Naziv property="pred:naziv" datatype="xs:string">Akt za vise novaca </p:Naziv>
                 <p:BrUkupnihGlasova>0</p:BrUkupnihGlasova>
                 <p:BrPozitivnihGlasova>0</p:BrPozitivnihGlasova>
             </p:Meta_podaci>

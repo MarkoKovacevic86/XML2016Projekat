@@ -16,7 +16,7 @@ import org.apache.fop.apps.Fop;
 import org.apache.fop.apps.FopFactory;
 import org.apache.fop.apps.MimeConstants;
 
-public abstract class TransformersXMLtoPdf {
+public abstract class TransformersXMLtoPdf implements TransformersAutobot {
 
 	protected FopFactory fopFactory;
 
@@ -24,6 +24,7 @@ public abstract class TransformersXMLtoPdf {
 	
 	public abstract InputStream loadXSL() throws Exception;
 
+	@Override
 	public void transform(InputStream xmlStream, OutputStream pdfStream) throws Exception {
 
 		StreamSource xslSource = new StreamSource(loadXSL());

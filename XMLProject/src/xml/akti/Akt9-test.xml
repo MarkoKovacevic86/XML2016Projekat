@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<p:Akt xmlns:p="http://www.parlament.gov.rs/propisi" 
+xmlns="http://www.w3.org/ns/rdfa#"
+xmlns:pred="http://www.parlament.gov.rs/propisi/predicate/" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.parlament.gov.rs/propisi ../../schema/akt.xsd ">
+  <p:Glavni_deo>
+    <p:Odeljak naziv="Odeljak1" opis="ma sta ce vem opis ovog odeljka" oznaka="od1">
+      <p:Sadrzaj>nesto</p:Sadrzaj>
+      <p:status>
+        <p:ref></p:ref>
+        <p:status_izmene>donet</p:status_izmene>
+      </p:status>
+    </p:Odeljak>
+    <p:Clan naziv="Clan1" opis="ma neki clan tajaznam" oznaka="cl1">
+      <p:Sadrzaj/>
+      <p:status>
+        <p:ref></p:ref>
+        <p:status_izmene>donet</p:status_izmene>
+      </p:status>
+    </p:Clan>
+    <p:Stav naziv="Stav1" opis="svi imamo stav" oznaka="st1">
+      <p:Sadrzaj/>
+      <p:status>
+        <p:ref></p:ref>
+        <p:status_izmene>donet</p:status_izmene>
+      </p:status>
+    </p:Stav>
+    <p:Tacka naziv="Tacka1" opis="tack tacka tackica" oznaka="">
+      <p:Sadrzaj/>
+      <p:status>
+        <p:ref></p:ref>
+        <p:status_izmene>donet</p:status_izmene>
+      </p:status>
+    </p:Tacka>
+    <p:Podtacka naziv="" opis="" oznaka="">
+      <p:Sadrzaj/>
+      <p:status>
+        <p:ref></p:ref>
+        <p:status_izmene>donet</p:status_izmene>
+      </p:status>
+    </p:Podtacka>
+    <p:Alineja naziv="" opis="" oznaka="">
+      <p:Sadrzaj>p:Sadrzaj</p:Sadrzaj>
+      <p:status>
+        <p:ref></p:ref>
+        <p:status_izmene>donet</p:status_izmene>
+      </p:status>
+    </p:Alineja>
+    <p:Glava naziv="" opis="" oznaka="">
+      <p:Sadrzaj/>
+      <p:status>
+        <p:ref></p:ref>
+        <p:status_izmene>donet</p:status_izmene>
+      </p:status>
+    </p:Glava>
+    <p:Deo naziv="" opis="" oznaka="">
+      <p:Sadrzaj/>
+      <p:status>
+        <p:ref></p:ref>
+        <p:status_izmene>donet</p:status_izmene>
+      </p:status>
+    </p:Deo>
+  </p:Glavni_deo>
+  <p:Sporedni_deo about="http://www.parlament.gov.rs/propisi/akti/doneti/doc10">
+    <p:Donet_akt>
+      <p:Donet_od_strane>p:Predlagac</p:Donet_od_strane>
+      <p:Po_postupku>p:Upucuje_se</p:Po_postupku>
+      <p:Po_cilju>p:bla</p:Po_cilju>
+      <p:Meta_podaci>
+       		<p:Oznaka property="pred:oznaka" datatype="xs:string">doc10</p:Oznaka>
+        	<p:Datum property="pred:datum" datatype="xs:date">2015-07-01</p:Datum>
+        	<p:Vrsta property="pred:vrsta" datatype="xs:string">Odredba</p:Vrsta>
+        	<p:Naziv property="pred:naziv" datatype="xs:string">losa aplikacija</p:Naziv>
+      	</p:Meta_podaci>
+      	<p:Osnov_donosenja>dsa</p:Osnov_donosenja>
+    </p:Donet_akt>
+  </p:Sporedni_deo>
+</p:Akt>

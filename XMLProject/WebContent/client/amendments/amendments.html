@@ -3,8 +3,6 @@
 		<h2 align="center">Amandmani</h2>
 		<br /> <br>
 		<div class="container">
-			<button class="btn btn-success topright" ng-click="value= !value;">Predlozi
-				novi amandman</button>
 			<table class="table">
 				<th>Naziv</th>
 				<tr ng-repeat="a in acts">
@@ -15,6 +13,7 @@
 						<ul ng-repeat="am in amendments">
 							<li><u>{{am.naziv.value}}
 									<button class="btn btn-danger btn-xs" ng-click="povuciAmandman(am)">Povuci amandman</button>
+									<button class="btn btn-info btn-xs" ng-click="pdf(am)">PDF</button>
 							</u></li>
 						</ul>
 						<div style="width: 50%;" class="form-group">

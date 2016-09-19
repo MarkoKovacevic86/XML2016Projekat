@@ -25,7 +25,7 @@ import com.marklogic.client.semantics.RDFMimeTypes;
 /**
  * Inicijalizacija RDF store-a.
  * 
- * Primenom GRDDL transformacije vr≈°i se ekstrakcija RDF tripleta iz XML 
+ * Primenom GRDDL transformacije vröi se ekstrakcija RDF tripleta iz XML 
  * dokumenta "data/xml/contacts.xml" i inicijalizacija imenovanog grafa
  * "example/sparql/metadata" ekstrahovanim tripletima.
  * 
@@ -84,11 +84,11 @@ public class RDFtoTriples {
 
 	public static void main(String[] args) throws Exception {
 		// Referencing XML file with RDF data in attributes
-		String xmlFilePath = "./src/xml/akti/amandman1-donet.xml";
+		String xmlFilePath = "./src/xml/akti/Akt9-test.xml";
 
-		String rdfFilePath = "rdf/amandman1-donet.rdf";
+		String rdfFilePath = "rdf/Akt9-test.rdf";
 
-		String sparqlNamedGraph = "/propisi/amandmani/doneti/metadata";
+		String sparqlNamedGraph = "/propisi/akti/doneti/metadata";
 		
 		String grddlPath = "rdf/grddl.xsl";
 
